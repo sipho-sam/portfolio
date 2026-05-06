@@ -4,276 +4,594 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Sipho Sam — Generative Search Strategist. Designing search visibility for the AI era.">
-<title>Sipho Sam — Generative Search Strategist (GEO/AEO)</title>
+<title>Sipho Sam — Generative Search Strategist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#131519;--bg2:#1a1d22;--bg3:#1f2228;--ac:#E24586;--acd:rgba(226,69,134,.12);--acg:rgba(226,69,134,.25);--t:#E4E4E4;--t2:#8C8E90;--t3:#747474;--b:rgba(228,228,228,.07);--ba:rgba(226,69,134,.22);--gl:rgba(255,255,255,.025);--f:'Space Grotesk',sans-serif;--m:'DM Mono',monospace;--r:14px}
+:root{--bg:#0c0e11;--bg2:#111417;--bg3:#161920;--ac:#E24586;--acd:rgba(226,69,134,.09);--acb:rgba(226,69,134,.32);--t:#EAEAEA;--t2:#888B8E;--t3:#56585C;--b:rgba(255,255,255,.06);--ba:rgba(226,69,134,.18);--gl:rgba(255,255,255,.016);--f:'Space Grotesk',sans-serif;--m:'DM Mono',monospace;--r:12px;--r2:18px;--r3:22px;--ease:cubic-bezier(.22,.68,0,1.2);--ease2:cubic-bezier(.4,0,.2,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(228,228,228,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(228,228,228,.028) 1px,transparent 1px);background-size:56px 56px}
-#cg{position:fixed;width:500px;height:500px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(226,69,134,.07) 0%,transparent 68%);transform:translate(-50%,-50%);z-index:1;transition:left .2s ease,top .2s ease}
-a{color:inherit;text-decoration:none}
-button{cursor:pointer;font-family:var(--f)}
-nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:900;display:flex;align-items:center;gap:2px;background:rgba(19,21,25,.85);backdrop-filter:blur(20px);border:1px solid var(--b);border-radius:100px;padding:6px}
-nav a{font-size:12px;font-weight:500;color:var(--t2);padding:7px 17px;border-radius:100px;transition:color .18s,background .18s;letter-spacing:.2px}
-nav a:hover{color:var(--t)}
-nav a.na,nav a.nc{background:var(--ac);color:#fff}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.019) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.019) 1px,transparent 1px);background-size:64px 64px}
+#cg{position:fixed;width:700px;height:700px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(226,69,134,.048) 0%,transparent 65%);transform:translate(-50%,-50%);z-index:1;transition:left .1s ease,top .1s ease}
+a{color:inherit;text-decoration:none}button{cursor:pointer;font-family:var(--f)}
 section{position:relative;z-index:2}
 .w{max-width:1060px;margin:0 auto;padding:0 28px}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--f);font-size:13px;font-weight:600;padding:13px 26px;border-radius:8px;transition:opacity .18s,transform .18s;letter-spacing:.15px}
-.btn:hover{opacity:.85;transform:translateY(-1px)}
-.bp{background:var(--ac);color:#fff}
-.bg{background:transparent;color:var(--t2);border:1px solid var(--b)}
-.bg:hover{color:var(--t);border-color:rgba(228,228,228,.18)}
-.ey{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ac);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.ey::after{content:'';height:1px;background:var(--b);width:40px}
-.sh{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;letter-spacing:-1.2px;line-height:1.08;color:var(--t);margin-bottom:16px}
-.sd{font-size:15px;color:var(--t2);line-height:1.8;max-width:520px}
-.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.sp{padding:76px 0;border-top:1px solid var(--b)}
+ 
+/* NAV */
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:900;display:flex;align-items:center;gap:2px;background:rgba(12,14,17,.92);backdrop-filter:blur(28px);border:1px solid var(--b);border-radius:100px;padding:5px}
+nav a{font-size:11.5px;font-weight:500;color:var(--t2);padding:7px 13px;border-radius:100px;transition:color .15s,background .15s;letter-spacing:.1px;white-space:nowrap}
+nav a:hover{color:var(--t)}
+nav a.na{background:rgba(255,255,255,.055);color:var(--t)}
+nav a.nc{background:var(--ac);color:#fff}
+ 
+/* TYPE */
+.ey{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--ac);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.ey::after{content:'';height:1px;background:var(--b);width:38px}
+.sh{font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:700;letter-spacing:-1.2px;line-height:1.08;color:var(--t);margin-bottom:14px}
+.sd{font-size:14.5px;color:var(--t2);line-height:1.82;max-width:510px}
+ 
+/* REVEAL */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
 .rv.vi{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
-
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.22s}.d4{transition-delay:.30s}
+ 
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:11px 22px;border-radius:8px;transition:opacity .15s,transform .2s var(--ease2);letter-spacing:.1px;border:none}
+.btn:hover{opacity:.88;transform:translateY(-1px) scale(1.01)}
+.bp{background:var(--ac);color:#fff}
+.bg2b{background:transparent;color:var(--t2);border:1px solid var(--b)}
+.bg2b:hover{color:var(--t);border-color:rgba(255,255,255,.14)}
+ 
+/* TOOLTIPS */
+[data-tip]{position:relative;cursor:help}
+[data-tip]::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%) scale(.94);background:var(--bg3);border:1px solid var(--ba);color:var(--t2);font-size:11px;font-family:var(--m);padding:7px 12px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .16s,transform .16s;z-index:200;width:210px;text-align:center;line-height:1.55;white-space:normal}
+[data-tip]:hover::after{opacity:1;transform:translateX(-50%) scale(1)}
+ 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;padding:130px 28px 90px}
-.hg{max-width:1060px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 430px;gap:72px;align-items:center}
-.htag{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--ac);margin-bottom:26px}
-.htag::before{content:'';width:22px;height:1px;background:var(--ac)}
-h1{font-size:clamp(3.4rem,7vw,5.2rem);font-weight:700;letter-spacing:-2px;line-height:1.03;margin-bottom:22px}
+#hero{min-height:100vh;display:flex;align-items:center;padding:130px 28px 80px}
+.hg{max-width:1060px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 460px;gap:60px;align-items:center}
+.htag{display:inline-flex;align-items:center;gap:9px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ac);margin-bottom:22px}
+.htag::before{content:'';width:18px;height:1px;background:var(--ac)}
+h1{font-size:clamp(3rem,6.5vw,4.8rem);font-weight:700;letter-spacing:-2px;line-height:1.03;margin-bottom:18px}
 h1 .ac{color:var(--ac)}
-.hp{font-size:clamp(1rem,2vw,1.2rem);color:var(--t2);line-height:1.75;margin-bottom:38px;max-width:510px}
+.hp{font-size:clamp(.95rem,1.7vw,1.1rem);color:var(--t2);line-height:1.82;margin-bottom:34px;max-width:460px}
 .hp strong{color:var(--t);font-weight:500}
-.hb{display:flex;gap:12px;flex-wrap:wrap}
-
+.hb{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.hkb{font-size:11px;color:var(--t3);font-family:var(--m)}
+.hkb kbd{font-family:var(--m);font-size:10px;color:var(--t3);padding:2px 7px;border:1px solid var(--b);border-radius:5px;background:rgba(255,255,255,.03)}
+ 
 /* TERMINAL */
-.trm{background:var(--bg2);border:1px solid var(--b);border-radius:var(--r);overflow:hidden}
-.tb{background:var(--bg3);padding:12px 16px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--b)}
+.trm{background:var(--bg2);border:1px solid var(--b);border-radius:var(--r2);overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.45);position:relative;transition:border-color .25s,transform .25s var(--ease2)}
+.trm:focus-within{border-color:var(--ba)}
+.trm:hover{transform:scale(1.005)}
+.trm::before{content:'';position:absolute;inset:0;pointer-events:none;border-radius:var(--r2);background:linear-gradient(140deg,rgba(226,69,134,.03) 0%,transparent 55%)}
+.tb{background:var(--bg3);padding:10px 15px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--b)}
 .td{width:10px;height:10px;border-radius:50%}
 .tdr{background:#FF5F57}.tdy{background:#FFBD2E}.tdg{background:#28CA41}
-.tl{font-size:10px;color:var(--t3);margin-left:auto;letter-spacing:.8px;font-family:var(--m)}
-.tbody{padding:24px;min-height:290px}
-.tql{font-size:11px;color:var(--t3);font-family:var(--m);margin-bottom:8px}
-.tqt{font-size:13px;color:var(--t2);padding:10px 14px;border-radius:7px;background:rgba(255,255,255,.03);border-left:2px solid var(--b);margin-bottom:18px}
-.tal{font-size:10px;color:var(--ac);letter-spacing:1px;font-family:var(--m);margin-bottom:10px}
-.tat{font-size:13px;color:var(--t);line-height:1.8}
+.tl{font-size:10px;color:var(--t3);margin-left:auto;letter-spacing:.8px;font-family:var(--m);display:flex;align-items:center;gap:6px}
+.tl-dot{width:5px;height:5px;border-radius:50%;background:#28CA41;box-shadow:0 0 5px #28CA41;animation:pg 2s ease infinite}
+@keyframes pg{0%,100%{opacity:1}50%{opacity:.35}}
+.tbody{padding:18px 20px;min-height:310px;display:flex;flex-direction:column}
+.trm-hist{flex:1;overflow-y:auto;max-height:208px;margin-bottom:10px;scrollbar-width:thin;scrollbar-color:var(--b) transparent}
+.trm-hist::-webkit-scrollbar{width:2px}
+.trm-hist::-webkit-scrollbar-thumb{background:var(--b)}
+.trm-entry{margin-bottom:14px;animation:fup .28s var(--ease)}
+@keyframes fup{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.tql{font-size:10px;color:var(--t3);font-family:var(--m);margin-bottom:5px}
+.tqt{font-size:12px;color:var(--t2);padding:8px 12px;border-radius:6px;background:rgba(255,255,255,.026);border-left:2px solid var(--b);margin-bottom:8px}
+.trm-logged{font-size:10px;color:var(--t3);font-family:var(--m);margin-bottom:7px;display:flex;align-items:center;gap:6px;animation:fi .25s ease}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.trm-logged::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--ac);flex-shrink:0}
+.proc-wrap{padding:4px 0 8px}
+.proc-line{font-size:10.5px;color:var(--t3);font-family:var(--m);display:flex;align-items:center;gap:8px;margin-bottom:4px;opacity:0;transition:opacity .2s}
+.proc-line.show{opacity:1}
+.proc-dot{width:4px;height:4px;border-radius:50%;background:var(--ac);flex-shrink:0;box-shadow:0 0 4px var(--ac)}
+.trm-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+.tal{font-size:10px;color:var(--ac);letter-spacing:1px;font-family:var(--m)}
+.t-conf{font-size:10px;font-family:var(--m)}
+.t-conf.hi{color:#4ade80}.t-conf.lo{color:#facc15}
+.tat{font-size:12.5px;color:var(--t);line-height:1.82}
 .tat .hl{color:var(--ac);font-weight:500}
-.tc{display:inline-block;width:7px;height:13px;background:var(--ac);margin-left:2px;vertical-align:middle;animation:blink 1s step-end infinite}
-@keyframes blink{50%{opacity:0}}
-.tds{display:flex;gap:6px;margin-top:20px}
-.tdn{width:6px;height:6px;border-radius:50%;background:var(--b);cursor:pointer;transition:background .2s}
-.tdn.on{background:var(--ac)}
-
+.tc{display:inline-block;width:6px;height:13px;background:var(--ac);margin-left:2px;vertical-align:middle;animation:bl 1s step-end infinite}
+@keyframes bl{50%{opacity:0}}
+.trm-sugg{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.trm-sq{font-size:10.5px;color:var(--t3);font-family:var(--m);padding:4px 9px;border:1px solid var(--b);border-radius:5px;cursor:pointer;transition:color .14s,border-color .14s,background .14s}
+.trm-sq:hover{color:var(--ac);border-color:var(--ba);background:var(--acd)}
+.trm-row{display:flex;align-items:center;gap:8px;border-top:1px solid var(--b);padding-top:11px;margin-top:auto}
+.trm-prompt{font-size:13px;color:var(--ac);font-family:var(--m);flex-shrink:0}
+.trm-in{flex:1;background:none;border:none;outline:none;font-family:var(--m);font-size:12.5px;color:var(--t);caret-color:var(--ac)}
+.trm-in::placeholder{color:var(--t3);font-size:11px}
+.trm-hint{font-size:10px;color:var(--t3);font-family:var(--m);margin-top:6px}
+ 
+/* SEARCH SIM */
+#simulate{padding:76px 0;border-top:1px solid var(--b)}
+.sim-wrap{margin-top:38px;background:var(--gl);border:1px solid var(--b);border-radius:var(--r3);overflow:hidden}
+.sim-bar{background:var(--bg3);padding:12px 18px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:12px}
+.sim-dots{display:flex;gap:5px}
+.sim-d{width:9px;height:9px;border-radius:50%}
+.sim-d:nth-child(1){background:#FF5F57}.sim-d:nth-child(2){background:#FFBD2E}.sim-d:nth-child(3){background:#28CA41}
+.sim-sbar{flex:1;background:rgba(255,255,255,.055);border:1px solid var(--b);border-radius:100px;padding:7px 14px;display:flex;align-items:center;gap:8px;transition:border-color .18s}
+.sim-sbar.focus{border-color:var(--ba)}
+.sim-sin{flex:1;background:none;border:none;outline:none;font-family:var(--f);font-size:13px;color:var(--t);caret-color:var(--ac)}
+.sim-sin::placeholder{color:var(--t3)}
+.sim-sbtn{font-size:11.5px;font-weight:600;color:#fff;background:var(--ac);border:none;border-radius:6px;padding:5px 13px;transition:opacity .14s;flex-shrink:0}
+.sim-sbtn:hover{opacity:.84}
+.sim-chips{display:flex;flex-wrap:wrap;gap:6px;padding:13px 18px;border-bottom:1px solid var(--b);background:var(--bg2)}
+.sim-chip{font-size:11.5px;color:var(--t3);padding:5px 12px;border:1px solid var(--b);border-radius:100px;cursor:pointer;font-family:var(--m);transition:color .13s,border-color .13s,background .13s}
+.sim-chip:hover,.sim-chip.on{color:var(--ac);border-color:var(--ba);background:var(--acd)}
+.sim-results{padding:22px 24px;min-height:320px}
+.sim-placeholder{padding:40px 0;text-align:center;color:var(--t3);font-family:var(--m);font-size:12px;line-height:1.8}
+.sim-loading{padding:12px 0}
+.sim-lbar{height:2px;background:var(--b);border-radius:1px;margin-bottom:10px;overflow:hidden}
+.sim-lfill{height:100%;background:linear-gradient(90deg,var(--ac),rgba(226,69,134,.3));width:0%;transition:width .55s var(--ease2)}
+.sim-ll{font-size:10.5px;color:var(--t3);font-family:var(--m);display:flex;align-items:center;gap:7px;margin-bottom:4px;opacity:0;transition:opacity .2s}
+.sim-ll.show{opacity:1}
+.sim-ll::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--ac);flex-shrink:0}
+.sim-result-box{animation:fup .4s var(--ease)}
+.sim-aio{background:linear-gradient(135deg,rgba(66,133,244,.07),rgba(66,133,244,.02));border:1px solid rgba(66,133,244,.22);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.sim-aio-hdr{display:flex;align-items:center;gap:9px;margin-bottom:12px;flex-wrap:wrap}
+.sim-aio-badge{font-size:11px;font-weight:600;color:rgba(100,160,255,.9);background:rgba(66,133,244,.1);padding:3px 9px;border-radius:5px;font-family:var(--m)}
+.sim-aio-lbl{font-size:10px;color:var(--t3);font-family:var(--m);letter-spacing:.5px}
+.sim-aio-ann{font-size:10.5px;color:var(--ac);font-family:var(--m);margin-left:auto;display:flex;align-items:center;gap:5px}
+.sim-aio-ann::before{content:'⚡'}
+.sim-aio-txt{font-size:13.5px;color:var(--t2);line-height:1.85}
+.sim-cite{color:var(--t);font-weight:500;background:rgba(226,69,134,.13);border:1px solid var(--ba);border-radius:4px;padding:1px 5px;font-size:12px;white-space:nowrap}
+.sim-cite::before{content:'↗ '}
+.sim-sources{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap}
+.sim-src{font-size:11px;color:var(--t3);font-family:var(--m);padding:3px 10px;background:rgba(255,255,255,.04);border:1px solid var(--b);border-radius:100px}
+.sim-src.hl{color:var(--ac);border-color:var(--ba);background:var(--acd)}
+.sim-organic{display:flex;flex-direction:column;gap:12px}
+.sim-res{padding:12px 14px;border-radius:8px;transition:background .15s}
+.sim-res:hover{background:rgba(255,255,255,.024)}
+.sim-res-url{font-size:11.5px;color:var(--t3);font-family:var(--m);margin-bottom:3px;display:flex;align-items:center;gap:7px}
+.sim-pos{font-size:9.5px;color:var(--ac);font-family:var(--m);background:var(--acd);border:1px solid var(--ba);padding:1px 6px;border-radius:4px}
+.sim-res-title{font-size:14px;color:#6aabff;margin-bottom:4px;line-height:1.3}
+.sim-res-snip{font-size:12.5px;color:var(--t3);line-height:1.6}
+.sim-res-snip .sq{color:var(--t2)}
+ 
+/* DASHBOARD */
+#dashboard{padding:76px 0;border-top:1px solid var(--b)}
+.dash-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:30px;flex-wrap:wrap;gap:12px}
+.dash-timer{font-size:11px;color:var(--t3);font-family:var(--m);display:flex;align-items:center;gap:7px}
+.dash-tdot{width:5px;height:5px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px #4ade80;animation:pg 2s ease infinite;flex-shrink:0}
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dc{background:var(--gl);border:1px solid var(--b);border-radius:var(--r2);padding:24px 26px;position:relative;overflow:hidden;transition:border-color .22s,transform .25s var(--ease2)}
+.dc:hover{border-color:var(--ba);transform:scale(1.012)}
+.dc::after{content:'';position:absolute;top:0;left:-120%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(226,69,134,.028),transparent);animation:scan 5s linear infinite}
+@keyframes scan{to{left:180%}}
+.dc-lbl{font-size:10px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--ac);font-family:var(--m);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.dc-lbl::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--ac);box-shadow:0 0 7px var(--ac);animation:pac 2.2s ease infinite;flex-shrink:0}
+@keyframes pac{0%,100%{box-shadow:0 0 5px var(--ac)}50%{box-shadow:0 0 12px var(--ac)}}
+.dc-rows{display:flex;flex-direction:column;gap:8px}
+.dc-row{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;padding:8px 11px;background:rgba(255,255,255,.022);border-radius:7px;border:1px solid rgba(255,255,255,.04);transition:background .3s,border-color .3s}
+.dc-row.flick{background:rgba(226,69,134,.06);border-color:var(--ba)}
+.dc-k{color:var(--t2);font-family:var(--m);font-size:11.5px}
+.dc-v{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500}
+.dc-v.ok{color:#4ade80}.dc-v.warn{color:#facc15}
+.dc-ind{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.dc-ind.ok{background:#4ade80;box-shadow:0 0 6px #4ade80;animation:pg 2s ease infinite}
+.dc-wide{grid-column:span 2}
+.dc-big{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.dc-stat{text-align:center;padding:15px 10px;background:rgba(255,255,255,.022);border-radius:9px;border:1px solid rgba(255,255,255,.04);transition:border-color .2s,transform .2s var(--ease2)}
+.dc-stat:hover{border-color:var(--ba);transform:scale(1.016)}
+.dc-sv{font-size:1.4rem;font-weight:700;letter-spacing:-.5px;color:var(--t);margin-bottom:5px}
+.dc-sv .ac{color:var(--ac)}
+.dc-sl{font-size:11px;color:var(--t3);line-height:1.4}
+ 
 /* METRICS */
-#metrics{padding:80px 0;border-top:1px solid var(--b)}
-.mg{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--b);border-radius:var(--r);overflow:hidden;margin-top:48px}
-.mc{padding:30px 24px;background:var(--gl);border-right:1px solid var(--b);transition:background .22s}
+#metrics{padding:76px 0;border-top:1px solid var(--b)}
+.mg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--b);border-radius:var(--r2);overflow:hidden;margin-top:38px}
+.mc{padding:26px 20px;background:var(--gl);border-right:1px solid var(--b);transition:background .2s,transform .2s var(--ease2)}
 .mc:last-child{border-right:none}
-.mc:hover{background:var(--acd)}
-.mv{font-size:2.4rem;font-weight:700;letter-spacing:-1.5px;color:var(--t);line-height:1;margin-bottom:8px}
+.mc:hover{background:var(--acd);transform:scale(1.016)}
+.mv{font-size:2.1rem;font-weight:700;letter-spacing:-1.5px;color:var(--t);line-height:1;margin-bottom:7px}
 .mv .ac{color:var(--ac)}
-.ml{font-size:11.5px;color:var(--t2);line-height:1.5}
-
+.ml{font-size:11px;color:var(--t2);line-height:1.5}
+ 
 /* SKILLS */
-#skills{padding:80px 0;border-top:1px solid var(--b)}
-.sc{display:flex;flex-wrap:wrap;gap:9px;margin-top:40px}
-.sk{font-size:13px;font-weight:500;color:var(--t2);background:var(--gl);border:1px solid var(--b);padding:8px 18px;border-radius:100px;transition:color .18s,border-color .18s,background .18s}
-.sk:hover{color:var(--ac);border-color:var(--ba);background:var(--acd)}
+#skills{padding:76px 0;border-top:1px solid var(--b)}
+.sc{display:flex;flex-wrap:wrap;gap:7px;margin-top:36px}
+.sk{font-size:13px;font-weight:500;color:var(--t2);background:var(--gl);border:1px solid var(--b);padding:8px 16px;border-radius:100px;transition:color .15s,border-color .15s,background .15s,transform .2s var(--ease2)}
+.sk:hover{color:var(--ac);border-color:var(--ba);background:var(--acd);transform:scale(1.02)}
 .sk.core{color:var(--ac);border-color:var(--ba);background:var(--acd)}
-
+ 
+/* AGENT */
+#agent{padding:76px 0;border-top:1px solid var(--b)}
+.ag-wrap{margin-top:36px;background:var(--gl);border:1px solid var(--b);border-radius:var(--r3);overflow:hidden;max-width:780px;margin-left:auto;margin-right:auto;transition:border-color .2s}
+.ag-wrap:focus-within{border-color:var(--ba)}
+.ag-hdr{background:var(--bg2);padding:16px 24px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:11px}
+.ag-icon{width:32px;height:32px;border-radius:8px;background:var(--acd);border:1px solid var(--ba);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.ag-ttl{font-size:13.5px;font-weight:600;color:var(--t)}
+.ag-sub{font-size:11px;color:var(--t3);font-family:var(--m);margin-top:2px}
+.ag-sta{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--t3);font-family:var(--m)}
+.ag-sdot{width:5px;height:5px;border-radius:50%;background:#4ade80;box-shadow:0 0 5px #4ade80;animation:pg 2s ease infinite}
+.ag-msgs{padding:20px 24px;min-height:200px;max-height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:13px;scrollbar-width:thin;scrollbar-color:var(--b) transparent}
+.ag-msgs::-webkit-scrollbar{width:2px}
+.ag-msgs::-webkit-scrollbar-thumb{background:var(--b)}
+.ag-msg{display:flex;flex-direction:column;animation:fup .28s var(--ease)}
+.ag-msg.u{align-items:flex-end}
+.ag-msg.b{align-items:flex-start}
+.ag-bbl{max-width:86%;font-size:13px;line-height:1.78;padding:11px 15px;border-radius:13px}
+.ag-msg.u .ag-bbl{background:var(--ac);color:#fff;border-radius:13px 13px 3px 13px}
+.ag-msg.b .ag-bbl{background:var(--bg3);border:1px solid var(--b);color:var(--t);border-radius:13px 13px 13px 3px}
+.ag-bbl .hl{color:var(--ac);font-weight:500}
+.ag-think{display:flex;align-items:center;gap:5px;padding:11px 15px;background:var(--bg3);border:1px solid var(--b);border-radius:13px 13px 13px 3px}
+.ag-think span{width:5px;height:5px;border-radius:50%;background:var(--t3);animation:th .9s ease infinite}
+.ag-think span:nth-child(2){animation-delay:.15s}.ag-think span:nth-child(3){animation-delay:.3s}
+@keyframes th{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.ag-prompts{padding:10px 24px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--b)}
+.ag-p{font-size:11px;color:var(--t3);padding:5px 12px;border:1px solid var(--b);border-radius:100px;cursor:pointer;font-family:var(--m);transition:color .13s,border-color .13s,background .13s}
+.ag-p:hover{color:var(--ac);border-color:var(--ba);background:var(--acd)}
+.ag-row{padding:12px 24px;border-top:1px solid var(--b);display:flex;align-items:center;gap:9px}
+.ag-in{flex:1;background:var(--bg3);border:1px solid var(--b);outline:none;color:var(--t);font-family:var(--f);font-size:13px;padding:10px 15px;border-radius:9px;transition:border-color .16s}
+.ag-in:focus{border-color:var(--ba)}
+.ag-in::placeholder{color:var(--t3)}
+.ag-snd{width:34px;height:34px;border-radius:8px;background:var(--ac);border:none;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .14s,transform .2s var(--ease2)}
+.ag-snd:hover{opacity:.85;transform:scale(1.06)}
+.ag-snd svg{width:14px;height:14px;color:#fff}
+ 
 /* CASE STUDY */
-#case{padding:80px 0;border-top:1px solid var(--b)}
-.csw{margin-top:48px;background:var(--gl);border:1px solid var(--b);border-radius:20px;overflow:hidden}
-.csh{padding:30px 38px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between;align-items:center}
-.csco{font-size:22px;font-weight:700;letter-spacing:-.5px;color:var(--t)}
-.cssub{font-size:12px;color:var(--t3);margin-top:4px}
-.csbadge{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ac);background:var(--acd);border:1px solid var(--ba);padding:5px 14px;border-radius:100px}
-.cstabs{display:flex;border-bottom:1px solid var(--b);padding:0 38px;overflow-x:auto}
-.cstab{font-size:12px;font-weight:500;color:var(--t3);padding:14px 18px;border:none;background:none;border-bottom:2px solid transparent;transition:color .18s,border-color .18s;white-space:nowrap}
+#case{padding:76px 0;border-top:1px solid var(--b)}
+.csw{margin-top:36px;background:var(--gl);border:1px solid var(--b);border-radius:var(--r3);overflow:hidden;position:relative}
+.cs-ov{position:absolute;inset:0;background:rgba(12,14,17,.8);z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border-radius:var(--r3);transition:opacity .35s;cursor:pointer;backdrop-filter:blur(4px)}
+.cs-ov.done{opacity:0;pointer-events:none}
+.cs-log{display:flex;flex-direction:column;align-items:flex-start;gap:7px;width:280px}
+.cs-ltitle{font-size:10px;color:var(--t3);font-family:var(--m);letter-spacing:1.5px;margin-bottom:4px;align-self:center}
+.cs-ll{font-size:11px;color:var(--t3);font-family:var(--m);display:flex;align-items:center;gap:9px;opacity:0;transition:opacity .2s}
+.cs-ll.show{opacity:1}
+.sl-dot{width:5px;height:5px;border-radius:50%;background:var(--ac);flex-shrink:0}
+.sl-chk{color:#4ade80;font-size:11px}
+.cs-bar{width:200px;height:2px;background:var(--b);border-radius:1px;overflow:hidden;align-self:center}
+.cs-fill{height:100%;background:var(--ac);width:0%;transition:width 1.7s var(--ease2)}
+.cs-skip{font-size:10px;color:var(--t3);font-family:var(--m);letter-spacing:.5px;align-self:center;margin-top:4px}
+.csh{padding:26px 34px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between;align-items:center}
+.csco{font-size:19px;font-weight:700;letter-spacing:-.4px;color:var(--t)}
+.cssub{font-size:11.5px;color:var(--t3);margin-top:3px}
+.csbadge{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ac);background:var(--acd);border:1px solid var(--ba);padding:5px 12px;border-radius:100px;display:flex;align-items:center;gap:6px}
+.csbadge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--ac);box-shadow:0 0 5px var(--ac);animation:pac 2s ease infinite}
+.cstabs{display:flex;border-bottom:1px solid var(--b);padding:0 34px;overflow-x:auto}
+.cstab{font-size:12px;font-weight:500;color:var(--t3);padding:12px 16px;border:none;background:none;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;white-space:nowrap}
 .cstab:hover{color:var(--t2)}
 .cstab.on{color:var(--ac);border-bottom-color:var(--ac)}
-.csb{padding:38px}
+.csb{padding:30px 34px}
 .csp{display:none}.csp.on{display:block}
-.ovg{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.ovp{font-size:14px;color:var(--t2);line-height:1.85;margin-bottom:14px}
-.kg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.kpi{background:var(--bg2);border:1px solid var(--b);border-radius:12px;padding:20px}
-.kv{font-size:1.65rem;font-weight:700;letter-spacing:-.5px;color:var(--t);line-height:1;margin-bottom:7px}
+.ovg{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.ovp{font-size:13.5px;color:var(--t2);line-height:1.85;margin-bottom:11px}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.kpi{background:var(--bg2);border:1px solid var(--b);border-radius:11px;padding:18px;transition:border-color .2s,transform .2s var(--ease2)}
+.kpi:hover{border-color:var(--ba);transform:scale(1.02)}
+.kv{font-size:1.55rem;font-weight:700;letter-spacing:-.5px;color:var(--t);line-height:1;margin-bottom:6px}
 .kv .ac{color:var(--ac)}
-.kl{font-size:11.5px;color:var(--t2);line-height:1.45}
-.scg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.sci{display:flex;align-items:center;gap:11px;font-size:13px;color:var(--t2);padding:11px 15px;background:var(--bg2);border:1px solid var(--b);border-radius:8px;transition:border-color .18s,color .18s}
-.sci:hover{border-color:var(--ba);color:var(--t)}
-.scd{width:5px;height:5px;border-radius:50%;background:var(--ac);flex-shrink:0}
-.spg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.spc{background:var(--bg2);border:1px solid var(--b);border-radius:12px;padding:22px;transition:border-color .2s}
-.spc:hover{border-color:var(--ba)}
-.spr{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ac);margin-bottom:7px}
-.spu{font-family:var(--m);font-size:11px;color:var(--t3);margin-bottom:14px;word-break:break-all;line-height:1.5}
-.sps{display:flex;gap:20px}
-.spv{font-size:1.4rem;font-weight:700;letter-spacing:-.5px;color:var(--t);margin-bottom:3px}
+.kl{font-size:11px;color:var(--t2);line-height:1.4}
+.scg{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.sci{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--t2);padding:10px 14px;background:var(--bg2);border:1px solid var(--b);border-radius:8px;transition:border-color .15s,color .15s,transform .2s var(--ease2)}
+.sci:hover{border-color:var(--ba);color:var(--t);transform:scale(1.01)}
+.scd{width:4px;height:4px;border-radius:50%;background:var(--ac);flex-shrink:0}
+.spg{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.spc{background:var(--bg2);border:1px solid var(--b);border-radius:11px;padding:20px;transition:border-color .2s,transform .2s var(--ease2)}
+.spc:hover{border-color:var(--ba);transform:scale(1.01)}
+.spr{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ac);margin-bottom:6px}
+.spu{font-family:var(--m);font-size:11px;color:var(--t3);margin-bottom:13px;word-break:break-all;line-height:1.5}
+.sps{display:flex;gap:18px}
+.spv{font-size:1.35rem;font-weight:700;letter-spacing:-.5px;color:var(--t);margin-bottom:2px}
 .spl{font-size:11px;color:var(--t3)}
-.spd{font-size:11px;color:var(--t3);margin-top:12px;font-family:var(--m)}
-
+.spd{font-size:11px;color:var(--t3);margin-top:11px;font-family:var(--m)}
+ 
 /* EXPERIENCE */
-#exp{padding:80px 0;border-top:1px solid var(--b)}
-.el{margin-top:48px;display:flex;flex-direction:column;gap:3px}
-.ei{background:var(--gl);border:1px solid var(--b);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
-.ei:hover{border-color:rgba(226,69,134,.18)}
-.eihd{display:flex;justify-content:space-between;align-items:center;padding:20px 26px;cursor:pointer;gap:16px}
-.eil{display:flex;align-items:center;gap:14px}
-.eiico{width:38px;height:38px;border-radius:9px;background:var(--bg3);border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ac);flex-shrink:0}
-.eico{font-size:14.5px;font-weight:600;color:var(--t)}
+#exp{padding:76px 0;border-top:1px solid var(--b)}
+.el{margin-top:36px;display:flex;flex-direction:column;gap:3px}
+.ei{background:var(--gl);border:1px solid var(--b);border-radius:var(--r);overflow:hidden;transition:border-color .18s}
+.ei:hover{border-color:rgba(226,69,134,.16)}
+.eihd{display:flex;justify-content:space-between;align-items:center;padding:17px 22px;cursor:pointer;gap:14px}
+.eil{display:flex;align-items:center;gap:12px}
+.eiico{width:34px;height:34px;border-radius:8px;background:var(--bg3);border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--ac);flex-shrink:0}
+.eico{font-size:14px;font-weight:600;color:var(--t)}
 .eirole{font-size:12px;color:var(--t2);margin-top:2px}
-.eir{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.eir{display:flex;align-items:center;gap:11px;flex-shrink:0}
 .eidt{font-size:11px;color:var(--t3);font-family:var(--m)}
-.chv{width:18px;height:18px;color:var(--t3);transition:transform .25s;flex-shrink:0}
+.chv{width:16px;height:16px;color:var(--t3);transition:transform .22s;flex-shrink:0}
 .ei.open .chv{transform:rotate(180deg)}
-.eibd{display:none;padding:0 26px 22px;border-top:1px solid var(--b)}
+.eibd{display:none;padding:0 22px 18px;border-top:1px solid var(--b)}
 .ei.open .eibd{display:block}
-.eiul{list-style:none;padding:0;padding-top:18px}
-.eiul li{font-size:13.5px;color:var(--t2);line-height:1.75;padding-left:16px;position:relative;margin-bottom:6px}
-.eiul li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--ac)}
-
+.eiul{list-style:none;padding-top:14px}
+.eiul li{font-size:13px;color:var(--t2);line-height:1.75;padding-left:14px;position:relative;margin-bottom:5px}
+.eiul li::before{content:'';position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--ac)}
+ 
 /* CONTACT */
-#contact{padding:80px 0 110px;border-top:1px solid var(--b)}
-.ctc{background:linear-gradient(135deg,rgba(226,69,134,.09),rgba(226,69,134,.03) 60%);border:1px solid var(--ba);border-radius:20px;padding:56px;text-align:center;position:relative;overflow:hidden}
-.ctc::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:280px;height:280px;background:radial-gradient(circle,rgba(226,69,134,.1),transparent 68%);pointer-events:none}
-.ctc .ey{justify-content:center}
-.ctc .ey::after{display:none}
-.ctt{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;letter-spacing:-1px;color:var(--t);margin-bottom:16px}
-.ctp{font-size:15px;color:var(--t2);max-width:460px;margin:0 auto 34px;line-height:1.8}
-.ctl{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-footer{border-top:1px solid var(--b);padding:22px;text-align:center;font-size:11.5px;color:var(--t3);position:relative;z-index:2;font-family:var(--m)}
-
+#contact{padding:76px 0 100px;border-top:1px solid var(--b)}
+.ctc{background:linear-gradient(140deg,rgba(226,69,134,.07),rgba(226,69,134,.02) 55%);border:1px solid var(--ba);border-radius:var(--r3);padding:52px;text-align:center;position:relative;overflow:hidden}
+.ctc::before{content:'';position:absolute;top:-90px;left:50%;transform:translateX(-50%);width:320px;height:320px;background:radial-gradient(circle,rgba(226,69,134,.1),transparent 68%);pointer-events:none}
+.ctc .ey{justify-content:center}.ctc .ey::after{display:none}
+.ctt{font-size:clamp(1.8rem,3.8vw,2.6rem);font-weight:700;letter-spacing:-1px;color:var(--t);margin-bottom:13px}
+.ctp{font-size:15px;color:var(--t2);max-width:430px;margin:0 auto 28px;line-height:1.8}
+.ctl{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+ 
+/* COMMAND PALETTE */
+#cp-ov{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);backdrop-filter:blur(18px);align-items:flex-start;justify-content:center;padding-top:16vh}
+#cp-ov.open{display:flex}
+.cp-box{width:min(540px,93vw);background:var(--bg2);border:1px solid var(--b);border-radius:var(--r2);overflow:hidden;box-shadow:0 48px 120px rgba(0,0,0,.75);animation:fup .2s var(--ease)}
+.cp-irow{display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid var(--b)}
+.cp-ico{color:var(--t3);flex-shrink:0}
+.cp-in{flex:1;background:none;border:none;outline:none;font-family:var(--f);font-size:14.5px;color:var(--t)}
+.cp-in::placeholder{color:var(--t3)}
+.cp-esc{font-size:10px;color:var(--t3);font-family:var(--m);padding:2px 7px;border:1px solid var(--b);border-radius:5px}
+.cp-list{padding:7px;max-height:340px;overflow-y:auto}
+.cp-sec{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t3);padding:8px 11px 5px;font-family:var(--m)}
+.cp-item{display:flex;align-items:center;gap:11px;padding:10px 11px;border-radius:8px;cursor:pointer;transition:background .1s;color:var(--t2)}
+.cp-item:hover,.cp-item.sel{background:rgba(255,255,255,.046);color:var(--t)}
+.cp-item.sel{background:var(--acd)}
+.cp-iico{width:28px;height:28px;border-radius:7px;background:var(--bg3);border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.cp-item.sel .cp-iico{border-color:var(--ba)}
+.cp-ilbl{font-size:13.5px}
+.cp-isub{font-size:11px;color:var(--t3);margin-top:1px}
+.cp-foot{padding:9px 17px;border-top:1px solid var(--b);display:flex;gap:12px;font-size:10.5px;color:var(--t3);font-family:var(--m)}
+.cp-foot span{display:flex;align-items:center;gap:4px}
+.ck{font-family:var(--m);font-size:10px;color:var(--t3);padding:1px 5px;border:1px solid var(--b);border-radius:4px}
+ 
+footer{border-top:1px solid var(--b);padding:18px;text-align:center;font-size:11px;color:var(--t3);position:relative;z-index:2;font-family:var(--m)}
+ 
 /* RESPONSIVE */
 @media(max-width:960px){
-  .hg{grid-template-columns:1fr;gap:44px}
-  .mg{grid-template-columns:repeat(3,1fr)}
-  .mc:nth-child(3){border-right:none}
-  .mc:nth-child(4),.mc:nth-child(5),.mc:nth-child(6){border-top:1px solid var(--b)}
-  .ovg{grid-template-columns:1fr}
-  .spg{grid-template-columns:1fr}
-  .scg{grid-template-columns:1fr}
-  .csh{flex-direction:column;align-items:flex-start;gap:12px}
+  .hg{grid-template-columns:1fr;gap:38px}
+  .mg{grid-template-columns:repeat(2,1fr)}
+  .mc:nth-child(2){border-right:none}
+  .mc:nth-child(3),.mc:nth-child(4){border-top:1px solid var(--b)}
+  .ovg,.dash-grid{grid-template-columns:1fr}
+  .dc-wide{grid-column:span 1}
+  .dc-big{grid-template-columns:repeat(2,1fr)}
+  .spg,.scg{grid-template-columns:1fr}
+  .csh{flex-direction:column;align-items:flex-start;gap:11px}
 }
 @media(max-width:620px){
-  nav{width:calc(100% - 32px)}
+  nav{width:calc(100% - 28px);flex-wrap:wrap;border-radius:14px;justify-content:center}
   .mg{grid-template-columns:1fr 1fr}
-  .mc{border-right:none;border-bottom:1px solid var(--b)}
-  .mc:last-child{border-bottom:none}
-  .kg{grid-template-columns:1fr 1fr}
-  .ctc{padding:32px 22px}
-  .csb{padding:22px}
+  .mc{border-right:none;border-bottom:1px solid var(--b)}.mc:last-child{border-bottom:none}.mc:nth-child(even){border-right:none}
+  .kg,.dc-big{grid-template-columns:1fr 1fr}
+  .ctc{padding:28px 18px}.csb{padding:20px 18px}
   .eihd{flex-direction:column;align-items:flex-start}
+  .sim-results{padding:16px 14px}
 }
 </style>
 </head>
 <body>
 <div id="cg"></div>
-
-<!-- NAV — EDIT: update links -->
+ 
+<!-- COMMAND PALETTE -->
+<div id="cp-ov" role="dialog" aria-label="Command palette">
+  <div class="cp-box">
+    <div class="cp-irow">
+      <svg class="cp-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="cp-in" class="cp-in" placeholder="Jump to section or trigger action…" autocomplete="off" spellcheck="false">
+      <span class="cp-esc">ESC</span>
+    </div>
+    <div class="cp-list" id="cp-list"></div>
+    <div class="cp-foot">
+      <span><kbd class="ck">↑↓</kbd> navigate</span>
+      <span><kbd class="ck">↵</kbd> go</span>
+      <span><kbd class="ck">ESC</kbd> close</span>
+    </div>
+  </div>
+</div>
+ 
+<!-- NAV -->
 <nav id="nav">
   <a href="#hero">Home</a>
-  <a href="#metrics">Results</a>
+  <a href="#simulate">Simulate</a>
+  <a href="#dashboard">Dashboard</a>
   <a href="#skills">Skills</a>
-  <a href="#case">Case study</a>
+  <a href="#agent">Agent</a>
+  <a href="#case">Case Study</a>
   <a href="#exp">Experience</a>
   <a href="#contact" class="nc">Contact</a>
 </nav>
-
-<!-- HERO — EDIT: tagline, description, button hrefs -->
+ 
+<!-- HERO -->
 <section id="hero">
   <div class="hg">
     <div>
       <p class="htag rv">Generative Search Strategist</p>
       <h1 class="rv d1">Sipho<br><span class="ac">Sam.</span></h1>
-      <p class="hp rv d2">Designing <strong>search visibility for the AI era.</strong> I build content systems that help brands become discoverable, credible, and chosen across <strong>Google, AI Overviews, answer engines,</strong> and <strong>LLM-assisted journeys.</strong></p>
+      <p class="hp rv d2"><strong>I don't rank content. I make brands the answer.</strong><br>Not just in search — in every AI that talks to your customers.</p>
       <div class="hb rv d3">
         <a href="#contact" class="btn bp">Start a conversation</a>
-        <a href="#case" class="btn bg">View case study</a>
+        <a href="#simulate" class="btn bg2b">See it working</a>
       </div>
+      <p class="hkb rv d4"><kbd>⌘K</kbd> / <kbd>Ctrl+K</kbd>&nbsp;&nbsp;command palette</p>
     </div>
-    <div class="trm rv d2">
+    <div class="trm rv d2" id="hero-trm">
       <div class="tb">
         <div class="td tdr"></div><div class="td tdy"></div><div class="td tdg"></div>
-        <span class="tl">AI_SEARCH_SIM</span>
+        <span class="tl"><span class="tl-dot"></span>GEO_SEARCH_AGENT&nbsp;v3</span>
       </div>
       <div class="tbody">
-        <p class="tql">// user query</p>
-        <div class="tqt" id="tq"></div>
-        <p class="tal">AI_OVERVIEW_RESPONSE</p>
-        <div class="tat" id="ta"></div>
-        <div class="tds" id="tds"></div>
+        <div class="trm-hist" id="trm-hist"></div>
+        <div class="trm-sugg" id="trm-sugg">
+          <span class="trm-sq" data-q="what is GEO/AEO">what is GEO/AEO</span>
+          <span class="trm-sq" data-q="how do brands get cited in AI">AI citations</span>
+          <span class="trm-sq" data-q="what is entity optimisation">entity optimisation</span>
+          <span class="trm-sq" data-q="why hire Sipho">why hire Sipho</span>
+        </div>
+        <div class="trm-row">
+          <span class="trm-prompt">›</span>
+          <input class="trm-in" id="trm-in" placeholder="Type a query and press Enter…" autocomplete="off" spellcheck="false">
+        </div>
+        <p class="trm-hint">↑↓ history &nbsp;·&nbsp; Enter to submit &nbsp;·&nbsp; click chips to explore</p>
       </div>
     </div>
   </div>
 </section>
-
-<!-- METRICS — EDIT: update .mv and .ml for each cell -->
+ 
+<!-- SEARCH SIMULATION -->
+<section id="simulate">
+  <div class="w">
+    <p class="ey rv">The system in action</p>
+    <h2 class="sh rv d1">Watch GEO/AEO<br>work in real time.</h2>
+    <p class="sd rv d2">Type a query or pick one below — see how a GEO-optimised brand appears in both the AI answer layer and traditional search results.</p>
+    <p class="rv d2" style="font-size:11px;color:var(--t3);font-family:var(--m);margin-top:8px;display:flex;align-items:center;gap:7px"><span style="color:var(--ac)">⚠</span> Simulated search experience for portfolio demonstration only. Sources and results are illustrative, not real.</p>
+    <div class="sim-wrap rv d3">
+      <div class="sim-bar">
+        <div class="sim-dots"><div class="sim-d"></div><div class="sim-d"></div><div class="sim-d"></div></div>
+        <div class="sim-sbar" id="sim-sbar">
+          <span style="font-size:13px;color:var(--t3);flex-shrink:0">🔍</span>
+          <input class="sim-sin" id="sim-in" placeholder="Try: best THC gummies for beginners…" autocomplete="off" spellcheck="false">
+          <button class="sim-sbtn" id="sim-btn">Search</button>
+        </div>
+      </div>
+      <div class="sim-chips" id="sim-chips">
+        <span class="sim-chip" data-q="best THC gummies for beginners">best THC gummies for beginners</span>
+        <span class="sim-chip" data-q="best intimacy gummies">best intimacy gummies</span>
+        <span class="sim-chip" data-q="how much THC is in one puff">how much THC in one puff</span>
+        <span class="sim-chip" data-q="hemp gummies for sleep">hemp gummies for sleep</span>
+      </div>
+      <div class="sim-results" id="sim-results">
+        <div class="sim-placeholder">Select a query above or type one to simulate AI search results<br><span style="font-size:11px;margin-top:6px;display:block">Demonstrates how GEO/AEO strategy places brands in AI-generated answers</span></div>
+        <p style="font-size:10.5px;color:var(--t3);font-family:var(--m);padding:12px 0 0;border-top:1px solid var(--b);margin-top:14px">⚠ Simulated experience — sources and results are illustrative, not real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- DASHBOARD -->
+<section id="dashboard">
+  <div class="w">
+    <div class="dash-top">
+      <div>
+        <p class="ey rv">Live signal data</p>
+        <h2 class="sh rv d1">AI Visibility<br>Dashboard.</h2>
+      </div>
+      <div class="dash-timer rv d2"><span class="dash-tdot"></span><span id="dash-t">last updated 0s ago</span></div>
+    </div>
+    <div class="dash-grid rv d2">
+      <div class="dc" id="dc-a">
+        <div class="dc-lbl">MOOD.COM — CITATION STATUS</div>
+        <div class="dc-rows" id="dcr-a">
+          <div class="dc-row"><span class="dc-k">ChatGPT</span><span class="dc-v ok"><span class="dc-ind ok"></span>Referenced</span></div>
+          <div class="dc-row"><span class="dc-k">Google AI Overview</span><span class="dc-v ok"><span class="dc-ind ok"></span>Present</span></div>
+          <div class="dc-row"><span class="dc-k">Perplexity</span><span class="dc-v ok"><span class="dc-ind ok"></span>Cited</span></div>
+          <div class="dc-row"><span class="dc-k">Entity Authority</span><span class="dc-v ok"><span class="dc-ind ok"></span>Strong</span></div>
+          <div class="dc-row"><span class="dc-k">Content Velocity</span><span class="dc-v ok"><span class="dc-ind ok"></span>High</span></div>
+        </div>
+      </div>
+      <div class="dc" id="dc-b">
+        <div class="dc-lbl">SEARCH SIGNALS</div>
+        <div class="dc-rows" id="dcr-b">
+          <div class="dc-row"><span class="dc-k">Topical Authority</span><span class="dc-v ok"><span class="dc-ind ok"></span>Established</span></div>
+          <div class="dc-row"><span class="dc-k">E-E-A-T Signals</span><span class="dc-v ok"><span class="dc-ind ok"></span>Compliant</span></div>
+          <div class="dc-row"><span class="dc-k">Structured Data</span><span class="dc-v ok"><span class="dc-ind ok"></span>Deployed</span></div>
+          <div class="dc-row"><span class="dc-k">Crawl Health</span><span class="dc-v ok"><span class="dc-ind ok"></span>Clean</span></div>
+          <div class="dc-row"><span class="dc-k">LLM Citation Count</span><span class="dc-v ok"><span class="dc-ind ok"></span>7,413+</span></div>
+        </div>
+      </div>
+      <div class="dc dc-wide">
+        <div class="dc-lbl">PERFORMANCE — Q1–Q2 2026</div>
+        <div class="dc-big">
+          <div class="dc-stat"><div class="dc-sv">341<span class="ac">K</span></div><div class="dc-sl">Blog clicks</div></div>
+          <div class="dc-stat"><div class="dc-sv">23.2<span class="ac">M</span></div><div class="dc-sl">Impressions</div></div>
+          <div class="dc-stat"><div class="dc-sv">7,413<span class="ac">+</span></div><div class="dc-sl">LLM &amp; AI Overview citations</div></div>
+          <div class="dc-stat"><div class="dc-sv"><span class="ac">+</span>198<span class="ac">%</span></div><div class="dc-sl">Traffic growth in 8 months</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- METRICS -->
 <section id="metrics">
   <div class="w">
     <p class="ey rv">Proof of work</p>
-    <h2 class="sh rv d1">Results that move<br>the needle.</h2>
+    <h2 class="sh rv d1">Numbers that<br>matter.</h2>
     <div class="mg rv d2">
-      <div class="mc"><div class="mv"><span class="ac">+</span>198<span class="ac">%</span></div><div class="ml">Blog growth in 8 months</div></div>
-      <div class="mc"><div class="mv">1,572</div><div class="ml">Daily clicks (up from 527)</div></div>
-      <div class="mc"><div class="mv">285<span class="ac">K</span></div><div class="ml">Daily impressions (up from 75K)</div></div>
-      <div class="mc"><div class="mv">5.2</div><div class="ml">Avg. position (down from 16.3)</div></div>
-      <div class="mc"><div class="mv">150<span class="ac">+</span></div><div class="ml">Articles produced per month</div></div>
+      <div class="mc"><div class="mv"><span class="ac">+</span>198<span class="ac">%</span></div><div class="ml">Blog traffic growth in 8 months</div></div>
+      <div class="mc"><div class="mv">7,413<span class="ac">+</span></div><div class="ml">LLM &amp; AI Overview citations</div></div>
+      <div class="mc"><div class="mv">285<span class="ac">K</span></div><div class="ml">Daily impressions</div></div>
       <div class="mc"><div class="mv">6<span class="ac">+</span></div><div class="ml">Years building search systems</div></div>
     </div>
   </div>
 </section>
-
-<!-- SKILLS — EDIT: add/remove .sk spans. class="core" = pink highlighted -->
+ 
+<!-- SKILLS -->
 <section id="skills">
   <div class="w">
     <p class="ey rv">Capabilities</p>
-    <h2 class="sh rv d1">What I bring<br>to the table.</h2>
-    <p class="sd rv d2">Spanning the full search stack — from generative engine optimisation to technical SEO, content systems, and AI-assisted production.</p>
+    <h2 class="sh rv d1">The full<br>search stack.</h2>
+    <p class="sd rv d2">GEO to technical SEO to AI-assisted production — end to end.</p>
     <div class="sc rv d3">
-      <span class="sk core">Generative Engine Optimisation (GEO)</span>
-      <span class="sk core">Answer Engine Optimisation (AEO)</span>
-      <span class="sk core">LLM Visibility Strategy</span>
+      <span class="sk core" data-tip="Structuring content to earn citations inside ChatGPT, Perplexity, and Google AI Overviews — the new frontier beyond blue links.">Generative Engine Optimisation (GEO)</span>
+      <span class="sk core" data-tip="Making your brand the definitive direct answer in voice search, featured snippets, and zero-click AI responses.">Answer Engine Optimisation (AEO)</span>
+      <span class="sk core" data-tip="Building entity clarity and topical depth so large language models cite your brand as a trusted authority by default.">LLM Visibility Strategy</span>
       <span class="sk core">AI Search Visibility</span>
-      <span class="sk">SEO Strategy</span>
-      <span class="sk">Technical SEO</span>
-      <span class="sk">Search Intent Mapping</span>
-      <span class="sk">Topical Authority Architecture</span>
-      <span class="sk">Entity Optimisation</span>
-      <span class="sk">Schema &amp; Structured Data</span>
-      <span class="sk">E-E-A-T Compliance</span>
-      <span class="sk">Prompt Engineering</span>
-      <span class="sk">AI-Assisted Content Production</span>
-      <span class="sk">Content Systems Architecture</span>
-      <span class="sk">Content Velocity</span>
-      <span class="sk">Semantic SEO</span>
-      <span class="sk">Editorial QA</span>
-      <span class="sk">CRO</span>
-      <span class="sk">Google Search Console</span>
-      <span class="sk">Semrush</span>
-      <span class="sk">Ahrefs</span>
-      <span class="sk">SurferSEO</span>
-      <span class="sk">Shopify / CMS Publishing</span>
-      <span class="sk">Brand Storytelling</span>
+      <span class="sk">SEO Strategy</span><span class="sk">Technical SEO</span>
+      <span class="sk">Search Intent Mapping</span><span class="sk">Topical Authority Architecture</span>
+      <span class="sk" data-tip="Defining your brand as an unambiguous, well-structured entity in AI training data and knowledge graphs.">Entity Optimisation</span>
+      <span class="sk">Schema &amp; Structured Data</span><span class="sk">E-E-A-T Compliance</span>
+      <span class="sk">Prompt Engineering</span><span class="sk">AI-Assisted Content Production</span>
+      <span class="sk">Content Systems Architecture</span><span class="sk">Content Velocity</span>
+      <span class="sk">Semantic SEO</span><span class="sk">Editorial QA</span><span class="sk">CRO</span>
+      <span class="sk">Google Search Console</span><span class="sk">Semrush</span>
+      <span class="sk">Ahrefs</span><span class="sk">SurferSEO</span>
+      <span class="sk">Shopify / CMS Publishing</span><span class="sk">Brand Storytelling</span>
       <span class="sk">Large Language Models</span>
     </div>
   </div>
 </section>
-
-<!-- CASE STUDY — EDIT: all Mood stats, article URLs, bullets -->
+ 
+<!-- SEARCH AGENT -->
+<section id="agent">
+  <div class="w">
+    <p class="ey rv">Interactive</p>
+    <h2 class="sh rv d1">Ask Sipho's<br>Search Agent.</h2>
+    <p class="sd rv d2">A knowledge agent. Ask about her work, results, background, or approach to AI search.</p>
+    <div class="ag-wrap rv d3">
+      <div class="ag-hdr">
+        <div class="ag-icon">🔍</div>
+        <div><div class="ag-ttl">Sipho's Search Agent</div><div class="ag-sub">GEO/AEO Knowledge System</div></div>
+        <div class="ag-sta"><span class="ag-sdot"></span>Online</div>
+      </div>
+      <div class="ag-msgs" id="ag-msgs">
+        <div class="ag-msg b"><div class="ag-bbl">Hey — I'm Sipho's search agent. Ask me about her work, results, background, or approach to AI search. What do you want to know?</div></div>
+      </div>
+      <div class="ag-prompts">
+        <span class="ag-p">What does Sipho do?</span>
+        <span class="ag-p">What is GEO/AEO?</span>
+        <span class="ag-p">What results has Sipho achieved?</span>
+        <span class="ag-p">Why should we hire Sipho?</span>
+        <span class="ag-p">What makes Sipho different?</span>
+        <span class="ag-p">What's Sipho's background?</span>
+        <span class="ag-p">What drives Sipho?</span>
+        <span class="ag-p">Is Sipho available remotely?</span>
+      </div>
+      <div class="ag-row">
+        <input class="ag-in" id="ag-in" placeholder="Ask anything about Sipho's work or approach…" autocomplete="off" spellcheck="false">
+        <button class="ag-snd" id="ag-snd" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CASE STUDY -->
 <section id="case">
   <div class="w">
     <p class="ey rv">Featured work</p>
     <h2 class="sh rv d1">Case study.</h2>
     <div class="csw rv d2">
-      <div class="csh">
-        <div>
-          <div class="csco">Mood</div>
-          <div class="cssub">U.S. Cannabis Lifestyle Brand &nbsp;·&nbsp; mood.com</div>
+      <div class="cs-ov" id="cs-ov" onclick="skipScan()">
+        <div class="cs-log">
+          <p class="cs-ltitle">SYSTEM SCAN</p>
+          <div class="cs-ll" id="csl1"><span class="sl-dot"></span><span>scanning organic visibility...</span></div>
+          <div class="cs-ll" id="csl2"><span class="sl-dot"></span><span>detecting AI citations...</span></div>
+          <div class="cs-ll" id="csl3"><span class="sl-dot"></span><span>mapping topical authority...</span></div>
+          <div class="cs-ll" id="csl4"><span class="sl-chk">✓</span><span style="color:var(--t2)">scan complete</span></div>
         </div>
+        <div class="cs-bar"><div class="cs-fill" id="cs-fill"></div></div>
+        <p class="cs-skip">click anywhere to skip</p>
+      </div>
+      <div class="csh">
+        <div><div class="csco">Mood</div><div class="cssub">U.S. Cannabis Lifestyle Brand &nbsp;·&nbsp; mood.com</div></div>
         <span class="csbadge">Active engagement</span>
       </div>
       <div class="cstabs">
@@ -285,9 +603,9 @@ footer{border-top:1px solid var(--b);padding:22px;text-align:center;font-size:11
         <div class="csp on" id="t-ov">
           <div class="ovg">
             <div>
-              <p class="ovp">Mood is a hemp-derived cannabinoid brand competing in one of the most compliance-sensitive and competitive niches in the U.S. market. I was brought on to architect and lead the brand's GEO/AEO content strategy from the ground up.</p>
-              <p class="ovp">The work spans full-funnel content production, AI Overview optimisation, LLM citation strategy, and technical SEO — designed to make Mood the authoritative answer across both traditional search and generative AI platforms including ChatGPT, Perplexity, and Google AI Overviews.</p>
-              <p class="ovp">In 8 months, organic blog traffic grew by +198%. The brand now holds 7,413+ LLM and AI Overview citations — establishing Mood as a cited authority at the forefront of AI-powered search.</p>
+              <p class="ovp">Hemp-derived cannabinoid brand. One of the most compliance-sensitive niches in the U.S. market. Sipho architected the GEO/AEO content strategy from zero.</p>
+              <p class="ovp">Built to dominate AI answers across ChatGPT, Google, and Perplexity. Full-funnel content production, LLM citation architecture, and technical SEO — making Mood the authoritative answer in AI-powered search.</p>
+              <p class="ovp">Organic blog traffic grew +198% in 8 months. Mood now holds 7,413+ LLM and AI Overview citations — a brand cited at the forefront of AI search.</p>
             </div>
             <div class="kg">
               <div class="kpi"><div class="kv">7,413<span class="ac">+</span></div><div class="kl">LLM &amp; AI Overview citations</div></div>
@@ -309,7 +627,7 @@ footer{border-top:1px solid var(--b);padding:22px;text-align:center;font-size:11
             <div class="sci"><span class="scd"></span>Internal linking strategy</div>
             <div class="sci"><span class="scd"></span>CMS publishing (Shopify)</div>
             <div class="sci"><span class="scd"></span>Indexation &amp; crawlability</div>
-            <div class="sci"><span class="scd"></span>CRO elements &amp; UX enhancements</div>
+            <div class="sci"><span class="scd"></span>CRO &amp; UX enhancements</div>
             <div class="sci"><span class="scd"></span>Editorial QA &amp; compliance</div>
             <div class="sci"><span class="scd"></span>Team onboarding &amp; systems</div>
             <div class="sci"><span class="scd"></span>Performance monitoring (GSC)</div>
@@ -335,126 +653,379 @@ footer{border-top:1px solid var(--b);padding:22px;text-align:center;font-size:11
     </div>
   </div>
 </section>
-
-<!-- EXPERIENCE — EDIT: .eico, .eirole, .eidt, .eiico initials, .eiul bullets -->
+ 
+<!-- EXPERIENCE -->
 <section id="exp">
   <div class="w">
     <p class="ey rv">Career</p>
     <h2 class="sh rv d1">Experience.</h2>
     <div class="el rv d2">
-
       <div class="ei open">
         <div class="eihd" onclick="tog(this)">
           <div class="eil"><div class="eiico">M</div><div><div class="eico">Mood</div><div class="eirole">Generative Search Strategist — Independent Consultant</div></div></div>
           <div class="eir"><span class="eidt">05/2025 – Present</span><svg class="chv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
         </div>
-        <div class="eibd">
-          <ul class="eiul">
-            <li>Architected a GEO/AEO content system generating 7,413+ LLM and AI Overview citations, establishing the brand as a cited authority across Google, ChatGPT, and Perplexity.</li>
-            <li>Scaled organic traffic from 527 to 1,572 clicks/day (+198%) and 75K to 285K impressions/day in 8 months, improving average position from 16.3 to 5.2.</li>
-            <li>Designed AI-assisted content production systems using large language models and AI-native tools across the full content stack, driving high-volume velocity at scale.</li>
-            <li>Led technical SEO across site architecture, internal linking strategy, crawlability remediation, and on-page optimisation.</li>
-            <li>Built structured SEO onboarding systems, process documentation, and knowledge libraries in Notion to scale team execution capacity.</li>
-            <li>Implemented CRO enhancements including interactive content elements and UX improvements to strengthen conversion performance.</li>
-          </ul>
-        </div>
+        <div class="eibd"><ul class="eiul">
+          <li>Architected a GEO/AEO content system generating 7,413+ LLM and AI Overview citations — establishing Mood as a cited authority across Google, ChatGPT, and Perplexity.</li>
+          <li>Scaled organic traffic to 1,572 clicks/day and 285K impressions/day in 8 months — a +198% growth trajectory.</li>
+          <li>Designed AI-assisted content production systems using large language models and AI-native tooling across the full content stack, driving high-volume velocity at scale.</li>
+          <li>Led technical SEO across site architecture, internal linking, crawlability remediation, and on-page optimisation.</li>
+          <li>Built structured SEO onboarding systems, process documentation, and knowledge libraries in Notion to scale team execution.</li>
+          <li>Implemented CRO enhancements including interactive content elements and UX improvements to strengthen conversion performance.</li>
+        </ul></div>
       </div>
-
       <div class="ei">
         <div class="eihd" onclick="tog(this)">
           <div class="eil"><div class="eiico">MP</div><div><div class="eico">Muddy Princess &nbsp;·&nbsp; Muddy Kids &nbsp;·&nbsp; Big Bounce Run</div><div class="eirole">Junior Marketing Manager</div></div></div>
           <div class="eir"><span class="eidt">11/2023 – 05/2025</span><svg class="chv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
         </div>
-        <div class="eibd">
-          <ul class="eiul">
-            <li>Reduced content production turnaround by 30% through AI workflow integration, delivering consistent output across a portfolio of 3 U.S. brands.</li>
-            <li>Led marketing execution across email, social, and CMS for Muddy Princess, Muddy Kids, and Big Bounce Run, aligning campaigns with growth priorities across multiple markets.</li>
-            <li>Supported brand launch execution through structured content planning, audience messaging, and influencer partnership coordination.</li>
-          </ul>
-        </div>
+        <div class="eibd"><ul class="eiul">
+          <li>Reduced content production turnaround by 30% through AI workflow integration, delivering consistent output across a portfolio of 3 U.S. brands.</li>
+          <li>Led marketing execution across email, social, and CMS — aligning campaigns with growth priorities across multiple markets.</li>
+          <li>Supported brand launch execution through structured content planning, audience messaging, and influencer partnership coordination.</li>
+        </ul></div>
       </div>
-
       <div class="ei">
         <div class="eihd" onclick="tog(this)">
           <div class="eil"><div class="eiico">E</div><div><div class="eico">Empanda &nbsp;·&nbsp; Pick n Pay &nbsp;·&nbsp; UN Global Compact SA</div><div class="eirole">Digital Marketing Lead</div></div></div>
           <div class="eir"><span class="eidt">10/2022 – 11/2023</span><svg class="chv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
         </div>
-        <div class="eibd">
-          <ul class="eiul">
-            <li>Secured C-suite participation in South Africa's UN Voluntary National Review in record time, with stakeholder engagement spanning Parliament, Pick n Pay, and UN Global Compact SA.</li>
-            <li>Founded and led the organisation's marketing function from the ground up, building scalable communication systems for enterprise and sustainability-focused clients.</li>
-            <li>Developed structured executive communication frameworks supporting authoritative storytelling across institutional partnerships and stakeholder levels.</li>
-          </ul>
-        </div>
+        <div class="eibd"><ul class="eiul">
+          <li>Secured C-suite participation in South Africa's UN Voluntary National Review in record time — stakeholder engagement spanning Parliament, Pick n Pay, and UN Global Compact SA.</li>
+          <li>Founded and led the organisation's marketing function from the ground up, building scalable communication systems for enterprise and sustainability-focused clients.</li>
+          <li>Developed structured executive communication frameworks supporting authoritative storytelling across institutional partnerships.</li>
+        </ul></div>
       </div>
-
     </div>
   </div>
 </section>
-
-<!-- CONTACT — EDIT: email address and LinkedIn URL -->
+ 
+<!-- CONTACT -->
 <section id="contact">
   <div class="w">
     <div class="ctc rv">
       <p class="ey">Let's talk</p>
-      <h2 class="ctt">Ready to build your<br>AI search presence?</h2>
-      <p class="ctp">Available for senior remote consulting, advisory, and embedded strategy roles. If you're asking how your brand shows up when ChatGPT or Perplexity answers your customer's questions — that's the problem I solve.</p>
+      <h2 class="ctt">Ready to Become<br>the Answer?</h2>
+      <p class="ctp">Available for senior remote consulting, advisory, and embedded strategy roles. If you're asking how your brand shows up when AI answers your customers — that's the problem I solve.</p>
       <div class="ctl">
         <a href="mailto:sam.siphosethu@gmail.com" class="btn bp">sam.siphosethu@gmail.com</a>
-        <a href="https://linkedin.com/in/siphosethusam" class="btn bg">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/siphosethusam/" class="btn bg2b">LinkedIn</a>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <footer>2026 &nbsp;·&nbsp; Sipho Sam &nbsp;·&nbsp; Generative Search Strategist (GEO/AEO) &nbsp;·&nbsp; Cape Town, RSA</footer>
-
+ 
 <script>
-/* CURSOR GLOW */
+/* ─── CURSOR GLOW ─── */
 const cg=document.getElementById('cg');
 document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
-
-/* SCROLL REVEAL */
-const rvs=document.querySelectorAll('.rv');
-const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vi')})},{threshold:.1});
-rvs.forEach(el=>ro.observe(el));
-
-/* ACTIVE NAV */
+ 
+/* ─── SCROLL REVEAL ─── */
+const rvObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vi')});},{threshold:.07});
+document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+ 
+/* ─── ACTIVE NAV ─── */
 const secs=document.querySelectorAll('section[id]');
 const nas=document.querySelectorAll('#nav a');
 window.addEventListener('scroll',()=>{
   let cur='';
-  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id});
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-150)cur=s.id});
   nas.forEach(a=>{a.classList.remove('na');if(a.getAttribute('href')==='#'+cur&&!a.classList.contains('nc'))a.classList.add('na')});
 },{passive:true});
-
-/* TERMINAL — EDIT: queries, answers, and highlight words in termData */
-const termData=[
-  {q:"What are the best THC gummies for beginners?",a:"For beginners, Mood's hemp-derived THC gummies are a top recommendation. Experts advise starting with 5mg and waiting 60 to 90 minutes before reassessing. Mood's formulas use federally compliant delta-9 THC, are third-party tested, and are designed for consistent, predictable experiences.",hl:["Mood","5mg","60 to 90 minutes"]},
-  {q:"Which cannabis brands appear in AI Overviews?",a:"Brands with strong topical authority and structured content architecture tend to earn citations in Google AI Overviews. Mood has built a significant AI search presence with 7,413+ citations across ChatGPT, Perplexity, and Google's generative results — the result of a systematic GEO/AEO content strategy.",hl:["Mood","7,413+","ChatGPT","Perplexity","GEO/AEO"]},
-  {q:"How do I get my brand cited by large language models?",a:"LLM citations depend on topical authority, entity clarity, and content structured for machine comprehension. A Generative Search Strategist architects content systems around search intent, E-E-A-T signals, and schema markup — making your brand the most credible answer available across AI platforms.",hl:["topical authority","Generative Search Strategist","E-E-A-T","schema markup"]}
-];
-let slide=0,typing=false;
-function buildDots(){
-  const d=document.getElementById('tds');d.innerHTML='';
-  termData.forEach((_,i)=>{const dot=document.createElement('div');dot.className='tdn'+(i===slide?' on':'');dot.onclick=()=>{if(!typing)show(i)};d.appendChild(dot)});
+ 
+/* ─── ACCORDION ─── */
+function tog(hd){hd.parentElement.classList.toggle('open')}
+ 
+/* ═══════════════════════════════════════════════════════
+   TERMINAL — DISCOVERY / CONCEPTUAL ONLY
+═══════════════════════════════════════════════════════ */
+const TDB={
+  "geo":{a:"GEO — Generative Engine Optimisation — is the discipline of structuring content so AI systems choose to cite your brand when generating answers. Traditional SEO wins blue links. GEO wins the answer itself — the layer that exists before a user ever clicks.",hl:["GEO","wins the answer itself"],conf:"high"},
+  "aeo":{a:"AEO — Answer Engine Optimisation — is structuring content to win zero-click positions: featured snippets, voice answers, and AI-generated direct responses. Not about ranking. About being the definitive answer.",hl:["AEO","zero-click","definitive answer"],conf:"high"},
+  "geo/aeo":{a:"GEO makes AI systems cite your brand. AEO makes your brand the direct answer to specific questions. Together they define a new category: designing for the AI answer layer, not the link layer.",hl:["GEO","AEO","AI answer layer"],conf:"high"},
+  "what is geo":{a:"GEO — Generative Engine Optimisation — is the discipline of structuring content so AI systems choose to cite your brand when generating answers. Traditional SEO wins blue links. GEO wins the answer itself — the layer that exists before a user ever clicks.",hl:["GEO","wins the answer itself"],conf:"high"},
+  "what is aeo":{a:"AEO — Answer Engine Optimisation — structures content to win zero-click positions: featured snippets, voice answers, and AI-generated direct responses. Not about ranking. About being the definitive answer.",hl:["AEO","zero-click","definitive answer"],conf:"high"},
+  "what is geo/aeo":{a:"GEO makes AI systems cite your brand. AEO makes your brand the direct answer to specific questions. Together they define a new category: designing for the AI answer layer, not the link layer.",hl:["GEO","AEO","AI answer layer"],conf:"high"},
+  "cited in ai":{a:"LLM citation is earned through three pillars: topical authority — owning a subject completely. Entity clarity — being unambiguous in AI training data. Machine-readable structure — schema, E-E-A-T signals, semantic HTML. The most credible, structured source gets pulled into AI responses.",hl:["topical authority","entity clarity","E-E-A-T","most credible"],conf:"high"},
+  "ai citations":{a:"LLM citation is earned through three pillars: topical authority — owning a subject completely. Entity clarity — being unambiguous in AI training data. Machine-readable structure — schema, E-E-A-T signals, semantic HTML. The most credible, structured source gets pulled into AI responses.",hl:["topical authority","entity clarity","E-E-A-T","most credible"],conf:"high"},
+  "how do brands get cited":{a:"LLM citation is earned through three pillars: topical authority — owning a subject completely. Entity clarity — being unambiguous in AI training data. Machine-readable structure — schema, E-E-A-T signals, semantic HTML. The most credible, structured source gets pulled into AI responses.",hl:["topical authority","entity clarity","E-E-A-T"],conf:"high"},
+  "entity optimisation":{a:"Entity optimisation defines your brand as an unambiguous, well-structured entity in AI training data and knowledge graphs. When AI systems understand exactly who or what you are, they cite you with confidence. It's the identity foundation of LLM visibility.",hl:["entity optimisation","AI training data","knowledge graphs","LLM visibility"],conf:"high"},
+  "what is entity":{a:"Entity optimisation defines your brand as an unambiguous, well-structured entity in AI training data and knowledge graphs. When AI systems understand exactly who or what you are, they cite you with confidence. It's the identity foundation of LLM visibility.",hl:["entity optimisation","AI training data","knowledge graphs","LLM visibility"],conf:"high"},
+  "topical authority":{a:"Topical authority means owning a subject so thoroughly that search engines and AI systems recognise you as the definitive source. Built through semantically connected content that covers a topic at every depth — not just surface articles.",hl:["topical authority","definitive source","semantically connected"],conf:"high"},
+  "llm visibility":{a:"LLM visibility is the degree to which large language models include your brand in their responses. It depends on entity clarity, topical authority, and content structured for machine comprehension. A brand with high LLM visibility gets mentioned when AI systems answer relevant questions.",hl:["LLM visibility","entity clarity","topical authority","machine comprehension"],conf:"high"},
+  "e-e-a-t":{a:"E-E-A-T — Experience, Expertise, Authoritativeness, Trustworthiness — is Google's framework for evaluating content quality. Strong E-E-A-T signals are foundational to both traditional search performance and AI citation eligibility.",hl:["E-E-A-T","Experience","Expertise","Authoritativeness","Trustworthiness"],conf:"high"},
+  "why hire sipho":{a:"She builds at the frontier where most marketers haven't arrived yet — the AI answer layer. She shipped a GEO content architecture that earns AI citations at scale, with 6+ years across the full search stack. Ask the Search Agent below for depth on her results and background.",hl:["AI answer layer","GEO content architecture","AI citations"],conf:"high"},
+  "what tools":{a:"Core toolstack: Google Search Console for performance data, Semrush and Ahrefs for research and audits, SurferSEO for on-page optimisation, Shopify for CMS publishing, Notion for systems and documentation — plus large language models for AI-assisted content production at scale.",hl:["Google Search Console","Semrush","Ahrefs","SurferSEO","Notion"],conf:"high"},
+  "schema":{a:"Schema markup (structured data) makes content machine-readable for search engines and AI systems. It signals entity relationships, content types, and factual context — making your brand far easier for AI to understand, trust, and cite.",hl:["schema markup","structured data","entity relationships"],conf:"high"}
+};
+const TRM_FB={a:"That's outside my quick-answer scope — the Search Agent below has full depth. Or scroll to the case study to see the system in action.",hl:["Search Agent"],conf:"low"};
+ 
+const tHist=document.getElementById('trm-hist');
+const tIn=document.getElementById('trm-in');
+let tQueryHist=[],tHIdx=-1,tBusy=false;
+ 
+function hlT(text,hls){
+  let r=text;
+  hls.forEach(h=>{const e=h.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');r=r.replace(new RegExp('('+e+')','gi'),'<span class="hl">$1</span>');});
+  return r;
 }
-function hl(text,hls){let r=text;hls.forEach(h=>{r=r.replace(new RegExp(h.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'),`<span class="hl">${h}</span>`)});return r}
-function type(el,text,hls,cb){
-  typing=true;el.innerHTML='';let i=0;
-  const iv=setInterval(()=>{i++;el.innerHTML=hl(text.slice(0,i),hls)+'<span class="tc"></span>';
-  if(i>=text.length){clearInterval(iv);el.innerHTML=hl(text,hls);typing=false;if(cb)cb()}},16);
+ 
+function typeText(el,text,hls,cb){
+  tBusy=true;el.innerHTML='';let i=0;
+  const iv=setInterval(()=>{
+    i++;
+    el.innerHTML=hlT(text.slice(0,i),hls)+'<span class="tc"></span>';
+    if(i>=text.length){clearInterval(iv);el.innerHTML=hlT(text,hls);tBusy=false;if(cb)cb();}
+  },13);
 }
-function show(idx){
-  slide=idx;const s=termData[idx];
-  document.getElementById('tq').textContent=s.q;
-  type(document.getElementById('ta'),s.a,s.hl);
-  buildDots();
+ 
+const PROC_MSGS=['parsing query...','mapping search intent...','evaluating entity authority...','generating response...'];
+ 
+function runProc(cb){
+  const pw=document.createElement('div');pw.className='proc-wrap';
+  tHist.appendChild(pw);
+  tHist.scrollTop=tHist.scrollHeight;
+  let i=0;
+  const next=()=>{
+    if(i>=PROC_MSGS.length){setTimeout(()=>{pw.remove();cb();},100);return;}
+    const ln=document.createElement('div');ln.className='proc-line';
+    ln.innerHTML=`<span class="proc-dot"></span><span>${PROC_MSGS[i]}</span>`;
+    pw.appendChild(ln);
+    setTimeout(()=>ln.classList.add('show'),20);
+    i++;setTimeout(next,380);
+  };
+  next();
 }
-show(0);
-setInterval(()=>{if(!typing)show((slide+1)%termData.length)},7500);
-
-/* CASE STUDY TABS */
+ 
+function addEntry(q,res){
+  const en=document.createElement('div');en.className='trm-entry';
+  const confCls=res.conf==='high'?'hi':'lo';
+  const confTxt=`confidence: ${res.conf}`;
+  en.innerHTML=`<p class="tql">// query</p>
+    <div class="tqt">${q}</div>
+    <div class="trm-meta"><span class="tal">AI_RESPONSE</span><span class="t-conf ${confCls}">${confTxt}</span></div>
+    <div class="tat" id="tat-${Date.now()}"></div>`;
+  tHist.appendChild(en);
+  tHist.scrollTop=tHist.scrollHeight;
+  const tatEl=en.querySelector('.tat');
+  typeText(tatEl,res.a,res.hl,()=>{tHist.scrollTop=tHist.scrollHeight;});
+}
+ 
+function trmLookup(q){
+  const lq=q.toLowerCase().trim();
+  for(const[k,v]of Object.entries(TDB)){if(lq.includes(k)||k.includes(lq))return v;}
+  return null;
+}
+ 
+function submitTrm(q){
+  if(!q.trim()||tBusy)return;
+  tQueryHist.unshift(q);tHIdx=-1;tIn.value='';
+  document.getElementById('trm-sugg').style.display='none';
+  // "query logged" micro message
+  const lg=document.createElement('div');lg.className='trm-logged';lg.textContent='query logged…';
+  tHist.appendChild(lg);tHist.scrollTop=tHist.scrollHeight;
+  // delay 150ms then run processing
+  setTimeout(()=>{
+    lg.remove();
+    const res=trmLookup(q);
+    runProc(()=>addEntry(q,res||TRM_FB));
+  },150);
+}
+ 
+tIn.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){submitTrm(tIn.value);return;}
+  if(e.key==='ArrowUp'){e.preventDefault();if(tHIdx<tQueryHist.length-1){tHIdx++;tIn.value=tQueryHist[tHIdx];}}
+  if(e.key==='ArrowDown'){e.preventDefault();if(tHIdx>0){tHIdx--;tIn.value=tQueryHist[tHIdx];}else{tHIdx=-1;tIn.value='';}}
+});
+document.querySelectorAll('.trm-sq').forEach(sq=>sq.addEventListener('click',()=>submitTrm(sq.dataset.q)));
+ 
+/* ═══════════════════════════════════════════════════════
+   SEARCH SIMULATION
+═══════════════════════════════════════════════════════ */
+const SIM_DATA={
+  "best THC gummies for beginners":{
+    aio:"For beginners, <span class='sim-cite'>mood.com</span> recommends starting with a low-dose hemp-derived THC gummy — typically 5mg — and waiting 60–90 minutes before reassessing. Their beginner-focused formulas use federally compliant delta-9 THC and are third-party lab tested for consistency and safety.",
+    sources:["mood.com","healthline.com","leafly.com","webmd.com"],
+    organic:[
+      {pos:"#1",url:"mood.com/blog/best-thc-gummies-beginners",title:"Best THC Gummies for Beginners (2026 Guide) — Mood",snip:"Starting with <span class='sq'>THC gummies</span> for the first time? Mood's beginner-friendly delta-9 formulas are third-party tested, federally compliant, and designed for a predictable experience."},
+      {pos:"#2",url:"leafly.com/news/cannabis/best-thc-gummies",title:"Best THC Gummies for Beginners — Leafly",snip:"We reviewed dozens of brands. Here's what <span class='sq'>beginners</span> should look for in their first <span class='sq'>THC gummy</span> — dosage, testing, and where to buy."},
+      {pos:"#3",url:"healthline.com/health/best-thc-gummies",title:"Best THC Gummies: Tested and Reviewed — Healthline",snip:"Our editors tested popular <span class='sq'>THC gummies</span> for potency, taste, and consistency. Several beginner options made the cut."}
+    ]
+  },
+  "best intimacy gummies":{
+    aio:"<span class='sim-cite'>mood.com</span> is consistently cited as a top recommendation for intimacy-focused hemp gummies, particularly for their proprietary blends combining delta-9 THC with botanicals designed to support relaxation and connection. Their intimacy line is among the most-referenced in AI-generated search responses.",
+    sources:["mood.com","cosmopolitan.com","menshealth.com","rollingstone.com"],
+    organic:[
+      {pos:"#1",url:"mood.com/blog/best-intimacy-gummies",title:"Best Intimacy Gummies for Couples (2026) — Mood",snip:"Mood's intimacy <span class='sq'>gummies</span> combine delta-9 THC with botanicals shown to support relaxation and connection. 106,305+ readers found this guide."},
+      {pos:"#2",url:"cosmopolitan.com/health/best-intimacy-gummies",title:"The Best Intimacy Gummies, According to Editors — Cosmopolitan",snip:"We tried the most popular <span class='sq'>intimacy gummies</span> on the market. These are our top picks for couples looking to enhance their experience."},
+      {pos:"#3",url:"rollingstone.com/product-recommendations/intimacy-gummies",title:"Best Intimacy Gummies of 2026 — Rolling Stone",snip:"From relaxation to enhanced connection, these <span class='sq'>hemp gummies</span> are changing how couples approach intimacy."}
+    ]
+  },
+  "how much THC is in one puff":{
+    aio:"The amount of THC in one puff varies significantly based on the product and device, but <span class='sim-cite'>mood.com</span> provides one of the most-cited breakdowns: a standard 1-second inhale from a 1g vape cartridge typically delivers approximately 2–5mg of THC, though this depends on device temperature, draw length, and product potency.",
+    sources:["mood.com","leafly.com","cannabis.wiki","healthline.com"],
+    organic:[
+      {pos:"#1",url:"mood.com/blog/how-much-thc-is-in-one-puff",title:"How Much THC Is in One Puff? The Complete Breakdown — Mood",snip:"<span class='sq'>THC per puff</span> depends on your device, cartridge, and draw length. Mood breaks down exactly what you're inhaling — backed by lab data. 306,701 impressions."},
+      {pos:"#2",url:"leafly.com/news/science-tech/thc-per-puff",title:"How Much THC Do You Actually Inhale? — Leafly",snip:"Researchers have studied <span class='sq'>THC delivery per inhalation</span>. Here's what the science says about dosing from vapes and joints."},
+      {pos:"#3",url:"healthline.com/health/how-much-thc-per-puff",title:"THC Dosing: How Much Are You Getting Per Puff? — Healthline",snip:"Understanding <span class='sq'>THC per inhalation</span> can help you dose more consistently. A medical review of what affects absorption."}
+    ]
+  },
+  "hemp gummies for sleep":{
+    aio:"For sleep, AI search consistently surfaces <span class='sim-cite'>mood.com</span> among top hemp gummy recommendations — particularly their CBN + delta-9 blends formulated specifically for sleep onset and duration. These are noted for third-party testing and compliance with federal hemp regulations.",
+    sources:["mood.com","sleepfoundation.org","healthline.com","webmd.com"],
+    organic:[
+      {pos:"#1",url:"mood.com/blog/best-hemp-gummies-sleep",title:"Best Hemp Gummies for Sleep (Expert Reviewed 2026) — Mood",snip:"Mood's sleep-focused <span class='sq'>hemp gummies</span> combine CBN, delta-9 THC, and melatonin for a research-backed sleep formula. Third-party tested."},
+      {pos:"#2",url:"sleepfoundation.org/sleep-aids/hemp-gummies-sleep",title:"Can Hemp Gummies Help You Sleep? — Sleep Foundation",snip:"<span class='sq'>Hemp gummies</span> containing CBN and CBD are increasingly studied for their potential role in sleep onset. Here's what the research shows."},
+      {pos:"#3",url:"healthline.com/health/hemp-gummies-sleep",title:"Hemp Gummies for Sleep: What the Evidence Says — Healthline",snip:"We reviewed the evidence on <span class='sq'>hemp gummies for sleep</span> and spoke to sleep specialists. Some formulations show real promise."}
+    ]
+  }
+};
+ 
+const simIn=document.getElementById('sim-in');
+const simBtn=document.getElementById('sim-btn');
+const simResults=document.getElementById('sim-results');
+const simSbar=document.getElementById('sim-sbar');
+let simBusy=false;
+ 
+simIn.addEventListener('focus',()=>simSbar.classList.add('focus'));
+simIn.addEventListener('blur',()=>simSbar.classList.remove('focus'));
+ 
+const SIM_LOADS=['crawling search index...','identifying AI Overview candidates...','mapping citation signals...','rendering results...'];
+ 
+function runSim(q){
+  if(simBusy)return;
+  const key=Object.keys(SIM_DATA).find(k=>q.toLowerCase().includes(k.toLowerCase())||k.toLowerCase().includes(q.toLowerCase()));
+  simBusy=true;
+  document.querySelectorAll('.sim-chip').forEach(c=>{c.classList.toggle('on',c.dataset.q===q);});
+  simIn.value=q;
+  // loading state
+  simResults.innerHTML='<div class="sim-loading"><div class="sim-lbar"><div class="sim-lfill" id="sim-lfill"></div></div></div>';
+  const lw=simResults.querySelector('.sim-loading');
+  setTimeout(()=>{document.getElementById('sim-lfill').style.width='100%';},50);
+  SIM_LOADS.forEach((msg,i)=>{
+    const ln=document.createElement('div');ln.className='sim-ll';ln.textContent=msg;lw.appendChild(ln);
+    setTimeout(()=>ln.classList.add('show'),80+i*320);
+  });
+  setTimeout(()=>{
+    const data=key?SIM_DATA[key]:null;
+    if(!data){
+      simResults.innerHTML=`<div class="sim-result-box"><div class="sim-placeholder">No simulation data for that query — try one of the chips above.<br><span style="font-size:11px;margin-top:6px;display:block">Preset queries demonstrate Mood's GEO/AEO citation results</span></div></div>`;
+      simBusy=false;return;
+    }
+    const hlSrcs=data.sources.map((s,i)=>`<span class="sim-src${i===0?' hl':''}">${s}</span>`).join('');
+    const orgRows=data.organic.map(r=>`<div class="sim-res">
+      <div class="sim-res-url"><span class="sim-pos">${r.pos}</span>${r.url}</div>
+      <div class="sim-res-title">${r.title}</div>
+      <div class="sim-res-snip">${r.snip}</div>
+    </div>`).join('');
+    simResults.innerHTML=`<div class="sim-result-box">
+      <div class="sim-aio">
+        <div class="sim-aio-hdr">
+          <span class="sim-aio-badge">AI Overview</span>
+          <span class="sim-aio-lbl">Generated by AI</span>
+          <span class="sim-aio-ann">GEO citation detected</span>
+        </div>
+        <div class="sim-aio-txt">${data.aio}</div>
+        <div class="sim-sources">${hlSrcs}</div>
+      </div>
+      <div class="sim-organic">${orgRows}</div>
+      <p style="font-size:10.5px;color:var(--t3);font-family:var(--m);padding:14px 0 0;border-top:1px solid var(--b);margin-top:14px">⚠ Simulated experience — sources and results are illustrative, not real.</p>
+    </div>`;
+    simBusy=false;
+  },1550);
+}
+ 
+simBtn.addEventListener('click',()=>{if(simIn.value.trim())runSim(simIn.value.trim());});
+simIn.addEventListener('keydown',e=>{if(e.key==='Enter'&&simIn.value.trim())runSim(simIn.value.trim());});
+document.querySelectorAll('.sim-chip').forEach(c=>c.addEventListener('click',()=>runSim(c.dataset.q)));
+ 
+/* ═══════════════════════════════════════════════════════
+   DASHBOARD — LIVE TIMER + ROW FLICKER
+═══════════════════════════════════════════════════════ */
+let dashSec=0;
+const dashT=document.getElementById('dash-t');
+setInterval(()=>{
+  dashSec++;
+  dashT.textContent=`last updated ${dashSec}s ago`;
+},1000);
+ 
+// Row flicker — every 2.8–4.5s pick a random row and briefly animate it
+function flickRandom(){
+  const allRows=[...document.querySelectorAll('.dc-row')];
+  if(!allRows.length)return;
+  const row=allRows[Math.floor(Math.random()*allRows.length)];
+  row.classList.add('flick');
+  setTimeout(()=>row.classList.remove('flick'),700);
+}
+setInterval(flickRandom,3200);
+// stagger the first flicker
+setTimeout(flickRandom,1800);
+ 
+/* ═══════════════════════════════════════════════════════
+   SEARCH AGENT — FULL KB incl. CV background knowledge
+═══════════════════════════════════════════════════════ */
+const AG_KB={
+  "what does sipho do":"Sipho is a <span class='hl'>Generative Search Strategist</span> — she designs the content architectures, LLM citation strategies, and technical SEO systems that make brands the authoritative answer across ChatGPT, Google AI Overviews, and Perplexity. Not just traditional search.",
+  "what is geo":"<span class='hl'>GEO — Generative Engine Optimisation</span> — is structuring content so AI systems cite your brand when generating answers. Traditional SEO wins blue links. GEO wins the answer itself. It's the frontier of search visibility.",
+  "what is aeo":"<span class='hl'>AEO — Answer Engine Optimisation</span> — structures content to become the definitive direct answer in voice search, featured snippets, and AI-generated responses. It prioritises question-based, conversational formats to win zero-click positions.",
+  "what is geo/aeo":"<span class='hl'>GEO</span> makes AI systems cite your brand in their generated responses. <span class='hl'>AEO</span> makes your brand the definitive answer to specific questions. Together, they define the strategy for AI-era search visibility — beyond the blue link.",
+  "results achieved":"At Mood, Sipho drove <span class='hl'>+198% blog traffic growth</span> in 8 months — scaling to 1,572 daily clicks and 285K daily impressions. The brand reached <span class='hl'>23.2M impressions and 341K blog clicks</span> in Q1–Q2 2026, with <span class='hl'>7,413+ LLM and AI Overview citations</span> across ChatGPT, Google, and Perplexity.",
+  "what results":"At Mood, Sipho drove <span class='hl'>+198% blog traffic growth</span> in 8 months — scaling to 1,572 daily clicks and 285K daily impressions. The brand reached <span class='hl'>23.2M impressions and 341K blog clicks</span> in Q1–Q2 2026, with <span class='hl'>7,413+ LLM and AI Overview citations</span> across ChatGPT, Google, and Perplexity.",
+  "why should we hire":"Because she operates at the frontier of AI search. She's not optimising for yesterday's algorithm — she's building the systems that make brands the answer when AI answers. Proven with <span class='hl'>7,413+ AI citations</span> and +198% traffic growth at Mood. <span class='hl'>6+ years</span> across the full search stack.",
+  "why hire":"Because she operates at the frontier of AI search. She's not optimising for yesterday's algorithm — she's building the systems that make brands the answer when AI answers. Proven with <span class='hl'>7,413+ AI citations</span> and +198% traffic growth at Mood. <span class='hl'>6+ years</span> across the full search stack.",
+  "what makes sipho different":"Most SEOs are still optimising for blue links. Sipho builds for the <span class='hl'>AI answer layer</span> — the layer that exists before users ever click. Her work at Mood produced 7,413+ LLM citations, establishing a brand as the authoritative answer across AI platforms at scale.",
+  "what tools":"Sipho works across: <span class='hl'>Google Search Console, Semrush, Ahrefs, SurferSEO, Shopify, Notion</span>, and a range of large language models for AI-assisted content production at scale.",
+  "what tools does sipho":"Sipho works across: <span class='hl'>Google Search Console, Semrush, Ahrefs, SurferSEO, Shopify, Notion</span>, and a range of large language models for AI-assisted content production at scale.",
+  "is sipho available":"Yes — Sipho is available for <span class='hl'>senior remote consulting, advisory, and embedded strategy roles</span> globally. Reach her at sam.siphosethu@gmail.com.",
+  "available remotely":"Yes — Sipho works fully remote and is available for <span class='hl'>senior consulting, advisory, and embedded strategy roles</span> globally.",
+  "remote work":"Yes — Sipho works fully remote and is available for <span class='hl'>senior consulting, advisory, and embedded strategy roles</span> globally.",
+  "how can we contact":"Reach Sipho at <span class='hl'>sam.siphosethu@gmail.com</span> or connect on LinkedIn. She's available for consulting, advisory, and embedded strategy engagements.",
+  "contact":"Reach Sipho at <span class='hl'>sam.siphosethu@gmail.com</span> or connect on LinkedIn.",
+  "sipho's background":"Sipho's path is not linear — and that's part of what makes her formidable. She started as a <span class='hl'>writing intern</span> and was promoted to <span class='hl'>Digital Marketing Lead within 6 months</span> — a signal of the kind of strategic instinct and rapid execution that defines her career. She brings a multi-disciplinary foundation in <span class='hl'>performance, music, and creative storytelling</span> — disciplines rooted in human psychology and connection — which she now applies to the architecture of AI search systems.",
+  "what's sipho's background":"Sipho's path is not linear — and that's part of what makes her formidable. She started as a <span class='hl'>writing intern</span> and was promoted to <span class='hl'>Digital Marketing Lead within 6 months</span> — a signal of the kind of strategic instinct and rapid execution that defines her career. She brings a multi-disciplinary foundation in <span class='hl'>performance, music, and creative storytelling</span> — disciplines rooted in human psychology and connection — which she now applies to the architecture of AI search systems.",
+  "background":"Sipho's path is not linear — and that's part of what makes her formidable. She started as a <span class='hl'>writing intern</span> and was promoted to <span class='hl'>Digital Marketing Lead within 6 months</span> — a signal of the kind of strategic instinct and rapid execution that defines her career. She brings a multi-disciplinary foundation in <span class='hl'>performance, music, and creative storytelling</span> — disciplines rooted in human psychology and connection.",
+  "how did sipho get into this":"She came through writing and storytelling — disciplines rooted in how people think, feel, and connect. That foundation in <span class='hl'>human psychology and narrative</span> gave her an unusual lens on search: she doesn't see content as a technical task, she sees it as communication architecture. She moved from <span class='hl'>writing intern to Digital Marketing Lead in 6 months</span>, and from there into the AI search frontier.",
+  "what drives sipho":"Connection. Sipho is driven by a deep interest in <span class='hl'>human psychology, storytelling, and how people understand the world</span>. She built her foundation in performance and creative disciplines — and now channels that into designing search systems that connect brands to the people asking for them. The AI search layer is, at its core, a system of trust and relevance — and that's what she builds.",
+  "what drives":"Connection. Sipho is driven by a deep interest in <span class='hl'>human psychology, storytelling, and how people understand the world</span>. She built her foundation in performance and creative disciplines — and now channels that into designing search systems that connect brands to the people asking for them.",
+  "sipho story":"Sipho's background spans <span class='hl'>performance, music, creative storytelling</span>, and strategic marketing. She started as a writing intern, was promoted to Digital Marketing Lead in 6 months, and over 6+ years developed into a specialist at the intersection of content strategy, AI systems, and brand visibility. Her creative roots are the reason she approaches search architecture the way she does — as communication, not just technical optimisation.",
+  "mood":"Mood is a U.S. hemp-derived cannabinoid brand — Sipho's flagship case study. She architected their entire GEO/AEO content strategy, scaling traffic <span class='hl'>+198%</span> in 8 months and generating <span class='hl'>7,413+ AI citations</span> across ChatGPT, Perplexity, and Google AI Overviews."
+};
+const AG_FB="I only have knowledge about Sipho's work, background, and approach — and that specific topic isn't in my system. Try asking about her results, background, what drives her, or how to get in touch.";
+ 
+const agMsgs=document.getElementById('ag-msgs');
+const agIn=document.getElementById('ag-in');
+const agSnd=document.getElementById('ag-snd');
+ 
+function agLookup(q){
+  const lq=q.toLowerCase().trim();
+  for(const[k,v]of Object.entries(AG_KB)){if(lq.includes(k)||k.includes(lq))return v;}
+  return null;
+}
+function agAppend(role,html){
+  const m=document.createElement('div');m.className=`ag-msg ${role}`;
+  m.innerHTML=`<div class="ag-bbl">${html}</div>`;
+  agMsgs.appendChild(m);agMsgs.scrollTop=agMsgs.scrollHeight;
+}
+function agThink(cb){
+  const t=document.createElement('div');t.className='ag-msg b';
+  t.innerHTML='<div class="ag-think"><span></span><span></span><span></span></div>';
+  agMsgs.appendChild(t);agMsgs.scrollTop=agMsgs.scrollHeight;
+  setTimeout(()=>{t.remove();cb();agMsgs.scrollTop=agMsgs.scrollHeight;},850);
+}
+function agSubmit(q){
+  if(!q.trim())return;agIn.value='';
+  agAppend('u',q);
+  agThink(()=>agAppend('b',agLookup(q)||AG_FB));
+}
+agSnd.addEventListener('click',()=>agSubmit(agIn.value));
+agIn.addEventListener('keydown',e=>{if(e.key==='Enter')agSubmit(agIn.value);});
+document.querySelectorAll('.ag-p').forEach(p=>p.addEventListener('click',()=>agSubmit(p.textContent)));
+ 
+/* ═══════════════════════════════════════════════════════
+   CASE STUDY TABS
+═══════════════════════════════════════════════════════ */
 document.querySelectorAll('.cstab').forEach(t=>{
   t.addEventListener('click',()=>{
     document.querySelectorAll('.cstab').forEach(x=>x.classList.remove('on'));
@@ -463,9 +1034,94 @@ document.querySelectorAll('.cstab').forEach(t=>{
     document.getElementById('t-'+t.dataset.tab).classList.add('on');
   });
 });
-
-/* ACCORDION */
-function tog(hd){hd.parentElement.classList.toggle('open')}
+ 
+/* ═══════════════════════════════════════════════════════
+   CASE STUDY SCAN — 30% faster, click-to-skip, semi-transparent
+═══════════════════════════════════════════════════════ */
+let scanDone=false;
+const csOv=document.getElementById('cs-ov');
+const csSection=document.getElementById('case');
+ 
+function skipScan(){
+  if(scanDone)return;
+  scanDone=true;
+  csOv.classList.add('done');
+}
+ 
+function runScan(){
+  if(scanDone)return;
+  scanDone=true;
+  setTimeout(()=>document.getElementById('cs-fill').style.width='100%',80);
+  const lines=['csl1','csl2','csl3'];
+  lines.forEach((id,i)=>setTimeout(()=>document.getElementById(id).classList.add('show'),200+i*380));
+  setTimeout(()=>document.getElementById('csl4').classList.add('show'),200+3*380);
+  setTimeout(()=>csOv.classList.add('done'),200+3*380+600);
+}
+ 
+const scanObs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting)runScan();});
+},{threshold:.3});
+scanObs.observe(csSection);
+ 
+/* ═══════════════════════════════════════════════════════
+   COMMAND PALETTE
+═══════════════════════════════════════════════════════ */
+const cpOv=document.getElementById('cp-ov');
+const cpIn=document.getElementById('cp-in');
+const cpList=document.getElementById('cp-list');
+ 
+const CP_CMDS=[
+  {group:'Navigate',items:[
+    {icon:'⌂',label:'Home',sub:'Hero section',fn:()=>goTo('#hero')},
+    {icon:'🔭',label:'Search Simulation',sub:'See GEO/AEO in action',fn:()=>goTo('#simulate')},
+    {icon:'📊',label:'AI Dashboard',sub:'Live visibility signals',fn:()=>goTo('#dashboard')},
+    {icon:'🛠',label:'Skills',sub:'Full capabilities',fn:()=>goTo('#skills')},
+    {icon:'🤖',label:'Search Agent',sub:"Ask Sipho's AI agent",fn:()=>goTo('#agent')},
+    {icon:'📂',label:'Case Study',sub:'Mood — GEO/AEO results',fn:()=>goTo('#case')},
+    {icon:'👤',label:'Experience',sub:'Career history',fn:()=>goTo('#exp')},
+    {icon:'✉️',label:'Contact',sub:'sam.siphosethu@gmail.com',fn:()=>goTo('#contact')},
+  ]},
+  {group:'Actions',items:[
+    {icon:'💬',label:'Email Sipho',sub:'Open email client',fn:()=>{window.location.href='mailto:sam.siphosethu@gmail.com';}},
+    {icon:'🔗',label:'Open LinkedIn',sub:'linkedin.com/in/…',fn:()=>{window.open('https://www.linkedin.com/in/siphosethusam/');}},
+    {icon:'📋',label:'View Case Study',sub:'Jump to Mood results',fn:()=>goTo('#case')},
+    {icon:'🔭',label:'Run Search Simulation',sub:'See GEO/AEO demonstrated',fn:()=>goTo('#simulate')},
+  ]},
+];
+ 
+function goTo(id){closeCp();document.querySelector(id)?.scrollIntoView({behavior:'smooth'});}
+let cpSel=0,cpFlat=[];
+ 
+function renderCp(filter){
+  cpList.innerHTML='';cpFlat=[];
+  CP_CMDS.forEach(group=>{
+    const items=filter?group.items.filter(i=>i.label.toLowerCase().includes(filter.toLowerCase())||i.sub.toLowerCase().includes(filter.toLowerCase())):group.items;
+    if(!items.length)return;
+    const sec=document.createElement('div');sec.className='cp-sec';sec.textContent=group.group;cpList.appendChild(sec);
+    items.forEach(item=>{
+      const el=document.createElement('div');
+      el.className='cp-item'+(cpFlat.length===cpSel?' sel':'');
+      el.innerHTML=`<div class="cp-iico">${item.icon}</div><div><div class="cp-ilbl">${item.label}</div><div class="cp-isub">${item.sub}</div></div>`;
+      el.addEventListener('click',()=>{item.fn();closeCp();});
+      el.addEventListener('mouseenter',()=>{cpSel=cpFlat.length;renderCp(cpIn.value);});
+      cpList.appendChild(el);cpFlat.push(item);
+    });
+  });
+}
+function openCp(){cpSel=0;cpIn.value='';renderCp('');cpOv.classList.add('open');setTimeout(()=>cpIn.focus(),50);}
+function closeCp(){cpOv.classList.remove('open');}
+cpIn.addEventListener('input',()=>{cpSel=0;renderCp(cpIn.value);});
+cpIn.addEventListener('keydown',e=>{
+  if(e.key==='ArrowDown'){e.preventDefault();cpSel=Math.min(cpSel+1,cpFlat.length-1);renderCp(cpIn.value);}
+  if(e.key==='ArrowUp'){e.preventDefault();cpSel=Math.max(cpSel-1,0);renderCp(cpIn.value);}
+  if(e.key==='Enter'&&cpFlat[cpSel]){cpFlat[cpSel].fn();closeCp();}
+  if(e.key==='Escape')closeCp();
+});
+document.addEventListener('keydown',e=>{
+  if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();cpOv.classList.contains('open')?closeCp():openCp();}
+  if(e.key==='Escape'&&cpOv.classList.contains('open'))closeCp();
+});
+cpOv.addEventListener('click',e=>{if(e.target===cpOv)closeCp();});
 </script>
 </body>
 </html>
